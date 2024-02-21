@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "neue-regrade";
+    src: url("/neue_regrade.woff2") format("woff2-variations");
+  }
+
+  body {
+    @apply antialiased;
+    font-family: "neue-regrade";
+    text-rendering: optimizeSpeed;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body,
+  main {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  main {
+    grid-template-columns: repeat(23, 1fr);
+    grid-template-rows: 1.5fr repeat(5, 1fr);
+    grid-template-areas:
+      "a a a a a b b b v v v g g g g g d d d d đ đ đ"
+      "e e e e e ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
+      "e e e e e ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
+      "i i i i i ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
+      "i i i i i k k k k l l l o o o o p p p p p p p"
+      "i i i i i k k k k r r r o o o o p p p p p p p";
+  }
+
+  main > section {
+    @apply rounded-2xl overflow-hidden max-w-full;
+  }
+
+  #intro p {
+    font-size: clamp(0.75rem, 0.781vw + 0.125rem, 1.063rem);
+  }
+
+  #straightforward p {
+    font-size: clamp(1.125rem, 1.86vw + -0.108rem, 2.125rem);
+  }
+}
