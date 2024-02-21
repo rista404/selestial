@@ -210,8 +210,7 @@ const infinity = (
 const download = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="110"
-		height="110"
+		width="50%"
 		fill="none"
 		viewBox="0 0 110 110"
 	>
