@@ -34,16 +34,18 @@ export default function Index() {
 				{logo}
 			</section>
 
+			{/* Sat */}
 			<section
 				style={{ gridArea: 'b' }}
-				className="bg-[#CCE3E3] flex items-center justify-center"
+				className="bg-[#F0F0F0] flex items-center justify-center"
 			>
 				{watch}
 			</section>
 
+			{/* Tim */}
 			<section
 				style={{ gridArea: 'v' }}
-				className="bg-[#A8E682]"
+				className="bg-[#F0F0F0]"
 			></section>
 
 			<section
@@ -74,7 +76,7 @@ export default function Index() {
 
 			<section
 				style={{ gridArea: 'ž' }}
-				className="bg-[#133200]"
+				className="bg-[#151515]"
 			></section>
 
 			<section
@@ -84,7 +86,7 @@ export default function Index() {
 				{/* Vrlo jednostavno */}
 				<div
 					id="straightforward"
-					className="flex-1 flex-shrink-0 flex items-center justify-center rounded-2xl bg-[#FFEB6A] text-center p-5"
+					className="flex-1 flex-shrink-0 flex items-center justify-center rounded-2xl bg-[#80E244] text-[#151515] text-center p-5"
 				>
 					<p>
 						<strong className="font-bold">Shockingly</strong>{' '}
@@ -94,15 +96,15 @@ export default function Index() {
 				{/* Milijarde */}
 				<div
 					id="milijarde"
-					className="flex-1 flex-shrink-0 rounded-2xl bg-[#A8E682] text-[#133200] p-5 relative flex flex-col justify-end"
+					className="flex-1 flex-shrink-0 rounded-2xl bg-[#F5D925] text-[#151515] p-4 relative flex flex-col justify-end"
 				>
 					<sup className="font-medium text-[1.8vw] absolute top-8 left-4">
 						$
 					</sup>
-					<p className="tracking-[-0.08em] font-extrabold leading-[0.9] text-right text-[9vw] pr-2">
-						0.3b
+					<p className="tracking-[-0.08em] font-bold leading-[0.9] text-right text-[9vw] pr-2">
+						0.5b
 					</p>
-					<p className="font-medium line-clamp-1 leading-none text-[0.83vw] pb-1">
+					<p className="font-medium line-clamp-1 leading-tight text-[0.83vw]">
 						After collaborating with us, our clients raised 0.3
 						billion dollars to date
 					</p>
@@ -119,16 +121,35 @@ export default function Index() {
 
 			<section style={{ gridArea: 'k' }} className="flex gap-5">
 				{/* Djordje */}
-				<div className="flex-1 rounded-2xl bg-[#CCE3E3]"></div>
+				<div
+					id="djordje"
+					className="group flex-1 flex gap-4 flex-col rounded-2xl bg-[#A4D9D9] p-5 font-medium"
+				>
+					<div>{smallStar}</div>
+					<div className="flex relative justify-center items-center flex-1">
+						<img
+							src="/djordje.png"
+							alt="George, Bondin"
+							className="w-[50%] transition group-hover:opacity-0 group-hover:invisible"
+						/>
+						<p className="absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible">
+							Working with them was seamless—they guided us in
+							refining our vision and exploring our ideas,
+							bringing us closer to our desired result with each
+							iteration. We were thrilled with the final product!
+						</p>
+					</div>
+					<p>— George, Bondin</p>
+				</div>
 
 				<div className="flex flex-col gap-5">
 					{/* Munja */}
-					<div className="bg-[#FFEB6A] rounded-2xl aspect-square text-[#133200] flex items-center justify-center">
+					<div className="bg-[#F5D925] rounded-2xl aspect-square text-[#151515] flex items-center justify-center">
 						{bolt}
 					</div>
 
 					{/* ∞ */}
-					<div className="bg-[#A8E682] rounded-2xl aspect-square text-[#133200] flex items-center justify-center">
+					<div className="bg-[#F0F0F0] rounded-2xl aspect-square text-[#FF4500] flex items-center justify-center">
 						{infinity}
 					</div>
 				</div>
@@ -160,6 +181,21 @@ export default function Index() {
 		</main>
 	)
 }
+
+const smallStar = (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="21"
+		height="21"
+		fill="none"
+		viewBox="0 0 21 21"
+	>
+		<path
+			fill="currentColor"
+			d="M9.577 1.22c.341-.821 1.505-.821 1.846 0l2.149 5.165a1 1 0 0 0 .843.613l5.577.447c.886.071 1.246 1.178.57 1.756l-4.248 3.64a1 1 0 0 0-.323.991l1.299 5.442c.206.865-.735 1.55-1.494 1.085l-4.775-2.916a1 1 0 0 0-1.042 0L5.205 20.36c-.76.464-1.7-.22-1.494-1.085l1.298-5.442a1 1 0 0 0-.323-.991L.438 9.2c-.676-.578-.316-1.685.57-1.756l5.577-.447a1 1 0 0 0 .843-.613L9.577 1.22Z"
+		/>
+	</svg>
+)
 
 const logo = (
 	<svg
@@ -219,13 +255,13 @@ const bolt = (
 const infinity = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		className="max-w-[50%] max-h-[50%] w-[116px] object-contain"
+		className="max-w-[50%] max-h-[50%] w-[91px] object-contain"
 		fill="none"
-		viewBox="0 0 116 50"
+		viewBox="0 0 91 45"
 	>
 		<path
 			fill="currentColor"
-			d="M108.462 7.312A25.394 25.394 0 0 0 93.465.184 23.242 23.242 0 0 0 90.428 0c-3.144 0-6.234.552-9.056 1.63a25.742 25.742 0 0 0-8.977 5.682l-5.186 5.076-.081.08-8.976 8.784-.188.21-3.602 3.498-1.666 1.631-3.601 3.525-9.165 8.969c-2.848 2.788-6.369 4.655-10.212 5.418-1.37.29-2.768.447-4.22.447h-.752a20.436 20.436 0 0 1-10.83-3.524c-1.076-.71-2.07-1.552-3.01-2.473-3.064-3.077-5.08-7.075-5.644-11.336-.807-6.286 1.317-12.362 5.805-16.728a21.952 21.952 0 0 1 1.908-1.657 18.775 18.775 0 0 1 4.407-2.551C19.91 5.602 22.65 5.05 25.498 5.05c1.075 0 2.124.079 3.172.237.591.079 1.155.184 1.72.315 3.574.842 6.853 2.657 9.54 5.287l9.03 8.838a2.586 2.586 0 0 0 3.602 0 2.455 2.455 0 0 0 0-3.525l-9.03-8.837C39.447 3.367 34.206.868 28.535.237a23.242 23.242 0 0 0-3.037-.184c-3.144 0-6.234.552-9.083 1.63a25.394 25.394 0 0 0-8.95 5.682c-.94.92-1.8 1.92-2.58 2.945-7.283 9.758-6.423 23.54 2.58 32.352a24.455 24.455 0 0 0 4.247 3.366c4.085 2.578 8.815 3.946 13.787 3.946h.215c1.397 0 2.795-.132 4.165-.368 5.16-.842 9.89-3.236 13.68-6.944l3.655-3.577c.053-.027.107-.08.16-.132l9.165-8.969 1.451-1.446 2.15-2.105 1.478-1.42 3.817-3.708 10.615-10.39c.108-.105.242-.236.35-.315l.35-.342a20.57 20.57 0 0 1 5.616-3.551c2.526-1.078 5.267-1.63 8.116-1.63 1.048 0 2.123.078 3.171.236.592.079 1.156.184 1.72.316 3.575.841 6.854 2.656 9.541 5.286 4.676 4.577 6.799 10.968 5.698 17.544-.726 4.287-2.984 8.206-6.209 11.178a19.482 19.482 0 0 1-2.176 1.736c-2.258 1.552-4.784 2.657-7.499 3.209-1.37.29-2.795.42-4.246.42h-.752c-4.005-.157-7.848-1.42-11.073-3.682a19.88 19.88 0 0 1-2.58-2.156l-9.352-9.154a2.075 2.075 0 0 0-2.903 0l-.699.684a1.97 1.97 0 0 0 0 2.841l9.353 9.153a24.641 24.641 0 0 0 4.273 3.367C80.807 48.632 85.564 50 90.51 50h.188a24.28 24.28 0 0 0 4.166-.368c5.16-.868 9.89-3.235 13.679-6.944a25.89 25.89 0 0 0 1.828-1.999 24.555 24.555 0 0 0-.807-32.22 25.402 25.402 0 0 0-1.101-1.157Z"
+			d="M83.828 6.62C79.564 2.358 73.953 0 68.005 0c-5.386 0-10.66 2.581-15.71 7.519l-.113.112-6.958 7.182-7.967 8.304-6.958 7.182c-1.57 1.571-4.152 3.367-7.855 3.367-3.03 0-5.835-1.122-7.968-3.254-2.132-2.133-3.254-4.938-3.254-7.968 0-3.03 1.122-5.835 3.254-7.968 2.132-2.132 4.938-3.254 7.968-3.254 2.918 0 5.835 2.357 7.855 4.264l4.04 4.152 7.743-8.08-3.815-3.927-.112-.112C33.105 2.469 27.83 0 22.444 0 16.496 0 10.774 2.357 6.62 6.62 2.357 10.886 0 16.497 0 22.445s2.357 11.67 6.62 15.823c4.265 4.264 9.876 6.62 15.824 6.62 5.835 0 11.446-2.356 15.71-6.732l.113-.113 6.509-6.733 8.64-8.977 6.846-7.07c1.908-1.908 4.825-4.264 7.743-4.264 3.03 0 5.835 1.122 7.968 3.254 2.132 2.132 3.254 4.937 3.254 7.967 0 3.03-1.122 5.836-3.254 7.968-2.133 2.357-5.05 3.479-7.968 3.479-3.591 0-6.284-1.796-7.743-3.367l-4.04-4.152-7.855 8.08 3.815 3.928.112.112C56.56 42.53 62.17 45 68.005 45c5.948 0 11.67-2.357 15.823-6.62 4.264-4.265 6.62-9.876 6.62-15.824 0-6.06-2.356-11.783-6.62-15.935Z"
 		/>
 	</svg>
 )
