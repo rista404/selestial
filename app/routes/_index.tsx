@@ -163,10 +163,9 @@ export default function Index() {
 						{FEATURES.map(f => (
 							<li
 								key={f}
-								className="flex gap-[0.6em] items-center"
+								className="group flex gap-[0.6em] text-[#151515] items-center hover:font-bold hover:text-[#0A70F8]"
 							>
-								<i className="text-[#133200]">{featureStar}</i>{' '}
-								{f}
+								<i>{featureStar}</i> {f}
 							</li>
 						))}
 					</ul>
@@ -289,9 +288,15 @@ const featureStar = (
 		fill="none"
 		viewBox="0 0 20 20"
 	>
-		<circle cx="10" cy="10" r="10" fill="currentColor" />
+		<circle
+			cx="10"
+			cy="10"
+			r="10"
+			className="fill-current group-hover:fill-white"
+		/>
 		<path
 			fill="#fff"
+			className="fill-white group-hover:fill-current"
 			d="M9.953 19v-9H1c4.957 0 8.953 4.04 8.953 9ZM9.953 1v9H1c4.957 0 8.953-4.017 8.953-9ZM9.953 1v9H19c-4.986 0-9.047-4.017-9.047-9ZM9.953 19v-9H19c-4.986 0-9.047 4.04-9.047 9Z"
 		/>
 	</svg>
