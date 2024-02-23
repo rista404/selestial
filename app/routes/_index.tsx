@@ -58,11 +58,22 @@ export default function Index() {
 				className="bg-[#0A70F8]"
 			></section>
 
+			{/* Our services */}
+
 			<section
+				id="our-services"
 				style={{ gridArea: 'đ' }}
-				className="bg-[#FFEB6A] text-[#133200] flex items-center justify-center"
+				className="group bg-[#F0F0F0] text-[#151515] flex flex-col justify-between p-4"
 			>
-				{download}
+				<small className="opacity-0 group-hover:opacity-100 transition-opacity">
+					Our Services
+				</small>
+				<p className="leading-none font-bold">
+					<span className="block text-[#FF4500]">Brand,</span>
+					<span className="block text-[#0A70F8]">Graphic,</span>
+					<span className="block text-[#008800]">Website,</span>
+					<span className="block text-[#151515]">Design!</span>
+				</p>
 			</section>
 
 			{/* Second line */}
@@ -261,21 +272,6 @@ const infinity = (
 		<path
 			fill="currentColor"
 			d="M83.828 6.62C79.564 2.358 73.953 0 68.005 0c-5.386 0-10.66 2.581-15.71 7.519l-.113.112-6.958 7.182-7.967 8.304-6.958 7.182c-1.57 1.571-4.152 3.367-7.855 3.367-3.03 0-5.835-1.122-7.968-3.254-2.132-2.133-3.254-4.938-3.254-7.968 0-3.03 1.122-5.835 3.254-7.968 2.132-2.132 4.938-3.254 7.968-3.254 2.918 0 5.835 2.357 7.855 4.264l4.04 4.152 7.743-8.08-3.815-3.927-.112-.112C33.105 2.469 27.83 0 22.444 0 16.496 0 10.774 2.357 6.62 6.62 2.357 10.886 0 16.497 0 22.445s2.357 11.67 6.62 15.823c4.265 4.264 9.876 6.62 15.824 6.62 5.835 0 11.446-2.356 15.71-6.732l.113-.113 6.509-6.733 8.64-8.977 6.846-7.07c1.908-1.908 4.825-4.264 7.743-4.264 3.03 0 5.835 1.122 7.968 3.254 2.132 2.132 3.254 4.937 3.254 7.967 0 3.03-1.122 5.836-3.254 7.968-2.133 2.357-5.05 3.479-7.968 3.479-3.591 0-6.284-1.796-7.743-3.367l-4.04-4.152-7.855 8.08 3.815 3.928.112.112C56.56 42.53 62.17 45 68.005 45c5.948 0 11.67-2.357 15.823-6.62 4.264-4.265 6.62-9.876 6.62-15.824 0-6.06-2.356-11.783-6.62-15.935Z"
-		/>
-	</svg>
-)
-
-const download = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="50%"
-		fill="none"
-		viewBox="0 0 110 110"
-	>
-		<circle cx="55" cy="55" r="53" stroke="currentColor" strokeWidth="4" />
-		<path
-			fill="currentColor"
-			d="M57 30a2 2 0 1 0-4 0h4Zm-3.414 51.414a2 2 0 0 0 2.828 0l12.728-12.728a2 2 0 1 0-2.828-2.828L55 77.172 43.686 65.858a2 2 0 1 0-2.828 2.828l12.728 12.728ZM53 30v50h4V30h-4Z"
 		/>
 	</svg>
 )
