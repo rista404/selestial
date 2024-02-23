@@ -1,5 +1,15 @@
 import type { MetaFunction } from '@remix-run/cloudflare'
 
+const FEATURES = [
+	'Unlimited iterations',
+	'One request at the time',
+	'No meetings',
+	'No contracts',
+	'Cancel anytime',
+	'Private Slack channel',
+	'Async communication',
+]
+
 export const meta: MetaFunction = () => {
 	return [
 		{ title: 'Selestial' },
@@ -74,7 +84,7 @@ export default function Index() {
 				{/* Vrlo jednostavno */}
 				<div
 					id="straightforward"
-					className="flex-1 flex items-center justify-center rounded-2xl bg-[#FFEB6A] text-center p-5"
+					className="flex-1 flex-shrink-0 flex items-center justify-center rounded-2xl bg-[#FFEB6A] text-center p-5"
 				>
 					<p>
 						<strong className="font-bold">Shockingly</strong>{' '}
@@ -84,9 +94,15 @@ export default function Index() {
 				{/* Milijarde */}
 				<div
 					id="milijarde"
-					className="flex-1 rounded-2xl bg-[#A8E682] text-[#133200] p-5"
+					className="flex-1 flex-shrink-0 rounded-2xl bg-[#A8E682] text-[#133200] p-5 relative flex flex-col justify-end"
 				>
-					<p className="font-medium line-clamp-1">
+					<sup className="font-medium text-[1.8vw] absolute top-8 left-4">
+						$
+					</sup>
+					<p className="tracking-[-0.08em] font-extrabold leading-[0.9] text-right text-[9vw] pr-2">
+						0.3b
+					</p>
+					<p className="font-medium line-clamp-1 leading-none text-[0.83vw] pb-1">
 						After collaborating with us, our clients raised 0.3
 						billion dollars to date
 					</p>
@@ -101,33 +117,40 @@ export default function Index() {
 				className="bg-[#EDEDED]"
 			></section>
 
-			{/* Djordje */}
-			<section
-				style={{ gridArea: 'k' }}
-				className="bg-[#CCE3E3]"
-			></section>
+			<section style={{ gridArea: 'k' }} className="flex gap-5">
+				{/* Djordje */}
+				<div className="flex-1 rounded-2xl bg-[#CCE3E3]"></div>
 
-			{/* Munja */}
-			<section
-				style={{ gridArea: 'l' }}
-				className="bg-[#FFEB6A] text-[#133200] flex items-center justify-center"
-			>
-				{bolt}
+				<div className="flex flex-col gap-5">
+					{/* Munja */}
+					<div className="bg-[#FFEB6A] rounded-2xl aspect-square text-[#133200] flex items-center justify-center">
+						{bolt}
+					</div>
+
+					{/* ∞ */}
+					<div className="bg-[#A8E682] rounded-2xl aspect-square text-[#133200] flex items-center justify-center">
+						{infinity}
+					</div>
+				</div>
+
+				{/* Features */}
+				<div
+					id="features"
+					className="flex-1 rounded-2xl bg-[#CCE3E3] p-5"
+				>
+					<ul className="h-full flex flex-col justify-between">
+						{FEATURES.map(f => (
+							<li
+								key={f}
+								className="flex gap-[0.6em] items-center"
+							>
+								<i className="text-[#133200]">{featureStar}</i>{' '}
+								{f}
+							</li>
+						))}
+					</ul>
+				</div>
 			</section>
-
-			{/* ∞ */}
-			<section
-				style={{ gridArea: 'r' }}
-				className="bg-[#A8E682] text-[#133200] flex items-center justify-center"
-			>
-				{infinity}
-			</section>
-
-			{/* Features */}
-			<section
-				style={{ gridArea: 'o' }}
-				className="bg-[#CCE3E3]"
-			></section>
 
 			{/* Subscribe */}
 			<section
@@ -218,6 +241,22 @@ const download = (
 		<path
 			fill="currentColor"
 			d="M57 30a2 2 0 1 0-4 0h4Zm-3.414 51.414a2 2 0 0 0 2.828 0l12.728-12.728a2 2 0 1 0-2.828-2.828L55 77.172 43.686 65.858a2 2 0 1 0-2.828 2.828l12.728 12.728ZM53 30v50h4V30h-4Z"
+		/>
+	</svg>
+)
+
+const featureStar = (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="1.15em"
+		height="1.15em"
+		fill="none"
+		viewBox="0 0 20 20"
+	>
+		<circle cx="10" cy="10" r="10" fill="currentColor" />
+		<path
+			fill="#fff"
+			d="M9.953 19v-9H1c4.957 0 8.953 4.04 8.953 9ZM9.953 1v9H1c4.957 0 8.953-4.017 8.953-9ZM9.953 1v9H19c-4.986 0-9.047-4.017-9.047-9ZM9.953 19v-9H19c-4.986 0-9.047 4.04-9.047 9Z"
 		/>
 	</svg>
 )

@@ -29,8 +29,8 @@
       "e e e e e ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
       "e e e e e ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
       "i i i i i ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
-      "i i i i i k k k k l l l o o o o p p p p p p p"
-      "i i i i i k k k k r r r o o o o p p p p p p p";
+      "i i i i i k k k k k k k k k k k p p p p p p p"
+      "i i i i i k k k k k k k k k k k p p p p p p p";
   }
 
   main > section {
@@ -43,5 +43,9 @@
 
   #straightforward p {
     font-size: clamp(1.125rem, 1.86vw + -0.108rem, 2.125rem);
+  }
+
+  #features li {
+    font-size: clamp(0.75rem, 0.781vw + 0.125rem, 1.063rem);
   }
 }
