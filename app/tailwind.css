@@ -13,6 +13,7 @@
     font-family: "neue-regrade";
     text-rendering: optimizeSpeed;
     -webkit-tap-highlight-color: transparent;
+    background-color: #f4f4f4;
   }
 
   body,
@@ -22,26 +23,115 @@
   }
 
   main {
-    grid-template-columns: repeat(23, 1fr);
-    grid-template-rows: 1.5fr repeat(5, 1fr);
-    grid-template-areas:
-      "a a a a a b b b v v v g g g g g d d d d đ đ đ"
-      "e e e e e ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
-      "e e e e e ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
-      "i i i i i ž ž ž ž ž ž ž ž ž ž ž z z z z z z z"
-      "i i i i i k k k k k k k k k k k p p p p p p p"
-      "i i i i i k k k k k k k k k k k p p p p p p p";
+    @apply max-2xl:space-y-5;
   }
 
   main > section {
     @apply rounded-2xl overflow-hidden max-w-full;
+    min-height: 220px;
+    aspect-ratio: 3/2;
   }
 
-  #intro p {
+  @media (min-width: 768px) {
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    main > section {
+      aspect-ratio: unset;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    main {
+      display: grid;
+      height: 100%;
+      max-height: 100vh;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      grid-template-areas:
+        "a a b b v v g g d d"
+        "a a b b v v g g d d"
+        "đ đ e e e e e e d d"
+        "đ đ e e e e e e ž ž"
+        "đ đ e e e e e e ž ž"
+        "z z e e e e e e i i"
+        "z z e e e e e e i i"
+        "z z k k l l j j j j"
+        "z z k k l l j j j j"
+        "z z k k l l j j j j";
+    }
+
+    main > section {
+      min-height: unset;
+      aspect-ratio: unset;
+    }
+
+    #intro {
+      grid-area: a;
+    }
+    #watch {
+      grid-area: b;
+    }
+    #latest-work {
+      grid-area: v;
+    }
+    #recognitions {
+      grid-area: g;
+    }
+    #clients {
+      grid-area: đ;
+    }
+    #video {
+      grid-area: e;
+    }
+    #slogan {
+      grid-area: d;
+    }
+    #milijarde {
+      grid-area: ž;
+    }
+    #faq {
+      grid-area: z;
+    }
+    #djordje {
+      grid-area: k;
+    }
+    #features {
+      grid-area: l;
+    }
+    #misc {
+      grid-area: i;
+    }
+    #subscribe {
+      grid-area: j;
+    }
+  }
+
+  /* font sizes */
+
+  .fs-heading {
+    font-size: clamp(1.75rem, 0.855vw + 0.949rem, 3rem);
+  }
+  .fs-p {
+    font-size: clamp(0.875rem, 0.855vw + 0.074rem, 2.125rem);
+  }
+
+  /* #intro p {
     font-size: clamp(0.75rem, 0.781vw + 0.125rem, 1.063rem);
+  } */
+
+  #watch {
+    background-image: url("/mars.png");
+    background-size: cover;
   }
 
-  #straightforward p {
+  #slogan {
+    background-image: url("/slogan.png");
+    background-size: cover;
+  }
+  #slogan p {
     font-size: clamp(1.125rem, 1.86vw + -0.108rem, 2.125rem);
   }
 

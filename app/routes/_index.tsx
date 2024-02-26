@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/cloudflare'
+import { useState } from 'react'
 
 const FEATURES = [
 	'Unlimited iterations',
@@ -19,176 +20,165 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<main className="grid gap-5 p-5 w-full h-full max-h-screen">
+		<main className="gap-5 p-5 w-full">
 			<section
 				id="intro"
-				style={{ gridArea: 'a' }}
-				className="text-[#EDEDED] flex flex-col justify-between gap-3 rounded-none"
+				className="text-black flex flex-col justify-between gap-3 rounded-none"
 			>
-				<p className="text-[#133200] font-medium">
-					We help startups raise their funds with branding, web and
-					graphic design. Subscribe to our services and we’ll become
-					an integral part of your team to drive you home.
-				</p>
+				<div className="flex justify-between items-stretch">
+					{logo}
+					<div className="bg-white rounded-[100px] font-extrabold h-full px-2 flex items-center">
+						©‘{new Date().getFullYear().toString().slice(2)}
+					</div>
+				</div>
 				<h1 className="sr-only">Selestial</h1>
-				{logo}
+				<p className="fs-p">
+					We help startups raise funds with branding, web and graphic
+					design. Subscribe to our services and we will become a
+					crucial part of your team to drive you home.
+				</p>
 			</section>
 
 			{/* Sat */}
 			<section
-				style={{ gridArea: 'b' }}
-				className="bg-[#F0F0F0] flex items-center justify-center"
+				id="watch"
+				className="bg-black text-white flex items-center justify-center"
 			>
 				{watch}
 			</section>
 
-			{/* Tim */}
-			<section
-				style={{ gridArea: 'v' }}
-				className="bg-[#F0F0F0]"
-			></section>
+			{/* Latest Work */}
+			<section id="latest-work" className="bg-[#FFCC33]"></section>
 
-			<section
-				style={{ gridArea: 'g' }}
-				className="bg-neutral-700"
-			></section>
+			{/* Recognitions */}
+			<section id="recognitions" className="bg-[#FF4500]"></section>
 
+			{/* Clients */}
 			<section
-				style={{ gridArea: 'd' }}
-				className="bg-[#0A70F8]"
-			></section>
-
-			{/* Our services */}
-
-			<section
-				id="our-services"
+				id="clients"
 				style={{ gridArea: 'đ' }}
-				className="group bg-[#F0F0F0] text-[#151515] flex flex-col justify-between p-4"
-			>
-				<small className="opacity-0 group-hover:opacity-100 transition-opacity">
-					Our Services
-				</small>
-				<p className="leading-none font-bold">
-					<span className="block text-[#FF4500]">Brand,</span>
-					<span className="block text-[#0A70F8]">Graphic,</span>
-					<span className="block text-[#008800]">Website,</span>
-					<span className="block text-[#151515]">Design!</span>
-				</p>
-			</section>
-
-			{/* Second line */}
-
-			<section
-				style={{ gridArea: 'e' }}
-				className="bg-[#FF4500]"
+				className="bg-[black]"
 			></section>
 
 			{/* Video */}
 
-			<section
-				style={{ gridArea: 'ž' }}
-				className="bg-[#151515]"
-			></section>
+			<section id="video" className="bg-[#CDC3B3]"></section>
 
+			{/* Vrlo jednostavno */}
 			<section
-				style={{ gridArea: 'z' }}
-				className="flex flex-col items-stretch justify-between gap-5"
+				id="slogan"
+				className="flex-1 flex-shrink-0 flex items-center justify-center bg-[#DFD1B4] text-center p-5"
 			>
-				{/* Vrlo jednostavno */}
-				<div
-					id="straightforward"
-					className="flex-1 flex-shrink-0 flex items-center justify-center rounded-2xl bg-[#80E244] text-[#151515] text-center p-5"
-				>
-					<p>
-						<strong className="font-bold">Shockingly</strong>{' '}
-						Straightforward
-					</p>
-				</div>
-				{/* Milijarde */}
-				<div
-					id="milijarde"
-					className="flex-1 flex-shrink-0 rounded-2xl bg-[#F5D925] text-[#151515] p-4 relative flex flex-col justify-end"
-				>
-					<sup className="font-medium text-[1.8vw] absolute top-8 left-4">
-						$
-					</sup>
-					<p className="tracking-[-0.08em] font-bold leading-[0.9] text-right text-[9vw] pr-2">
-						0.5b
-					</p>
-					<p className="font-medium line-clamp-1 leading-tight text-[0.83vw]">
-						After collaborating with us, our clients raised 0.3
-						billion dollars to date
-					</p>
-				</div>
+				<p className="leading-none">
+					<strong className="text-white font-bold">Shockingly</strong>{' '}
+					<span className="text-black">Straightforward</span>
+				</p>
 			</section>
 
-			{/* Third line */}
+			{/* Milijarde */}
+			<section
+				id="milijarde"
+				className="flex-1 flex-shrink-0 bg-[#F5D925] text-black p-4 relative flex flex-col justify-end"
+			>
+				<sup className="font-medium text-[1.8vw] absolute top-8 left-4">
+					$
+				</sup>
+				<p className="tracking-[-0.08em] font-bold leading-[0.9] text-right text-[9vw] pr-2">
+					0.5b
+				</p>
+				<p className="font-medium line-clamp-1 leading-tight text-[0.83vw]">
+					After collaborating with us, our clients raised 0.3 billion
+					dollars to date
+				</p>
+			</section>
 
 			{/* FAQ */}
+			<section id="faq" className="bg-[#EDEDED]"></section>
+
+			{/* Djordje */}
 			<section
-				style={{ gridArea: 'i' }}
-				className="bg-[#EDEDED]"
-			></section>
-
-			<section style={{ gridArea: 'k' }} className="flex gap-5">
-				{/* Djordje */}
-				<div
-					id="djordje"
-					className="group flex-1 flex gap-4 flex-col rounded-2xl bg-[#A4D9D9] p-5 font-medium"
-				>
-					<div>{smallStar}</div>
-					<div className="flex relative justify-center items-center flex-1">
-						<img
-							src="/djordje.png"
-							alt="George, Bondin"
-							className="w-[50%] transition group-hover:opacity-0 group-hover:invisible"
-						/>
-						<p className="absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible">
-							Working with them was seamless—they guided us in
-							refining our vision and exploring our ideas,
-							bringing us closer to our desired result with each
-							iteration. We were thrilled with the final product!
-						</p>
-					</div>
-					<p>— George, Bondin</p>
+				id="djordje"
+				className="group flex-1 flex gap-4 flex-col bg-[#ECE5D6] p-5 font-medium"
+			>
+				<div>{smallStar}</div>
+				<div className="flex relative justify-center items-center h-full">
+					<img
+						src="/djordje.png"
+						alt="George, Bondin"
+						className="absolute h-full object-contain transition group-hover:opacity-0 group-hover:invisible"
+					/>
+					<p className="absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible">
+						Working with them was seamless—they guided us in
+						refining our vision and exploring our ideas, bringing us
+						closer to our desired result with each iteration. We
+						were thrilled with the final product!
+					</p>
 				</div>
+				<p>— George, Bondin</p>
+			</section>
 
-				<div className="flex flex-col gap-5">
-					{/* Munja */}
-					<div className="bg-[#F5D925] rounded-2xl aspect-square text-[#151515] flex items-center justify-center">
-						{bolt}
-					</div>
+			<section id="misc" className="bg-red-100"></section>
 
-					{/* ∞ */}
-					<div className="bg-[#F0F0F0] rounded-2xl aspect-square text-[#FF4500] flex items-center justify-center">
-						{infinity}
-					</div>
-				</div>
-
-				{/* Features */}
-				<div
-					id="features"
-					className="flex-1 rounded-2xl bg-[#CCE3E3] p-5"
-				>
-					<ul className="h-full flex flex-col justify-between">
-						{FEATURES.map(f => (
-							<li
-								key={f}
-								className="group flex gap-[0.6em] text-[#151515] items-center hover:font-bold hover:text-[#0A70F8]"
-							>
-								<i>{featureStar}</i> {f}
-							</li>
-						))}
-					</ul>
-				</div>
+			{/* Features */}
+			<section id="features" className="flex-1 bg-white p-5">
+				<ul className="h-full flex flex-col justify-between">
+					{FEATURES.map(f => (
+						<li
+							key={f}
+							className="group flex gap-[0.6em] text-black items-center hover:font-bold hover:text-[#FF4500] font-medium"
+						>
+							<i className="h-[1.2em] w-[1.2em]">{featureStar}</i>{' '}
+							{f}
+						</li>
+					))}
+				</ul>
 			</section>
 
 			{/* Subscribe */}
-			<section
-				style={{ gridArea: 'p' }}
-				className="bg-[#EDEDED]"
-			></section>
+			<SubscribeBlock />
 		</main>
+	)
+}
+
+function SubscribeBlock() {
+	const [quarterly, setQuarterly] = useState(false)
+
+	const price = quarterly ? '$4,400' : '$4,995'
+
+	const url = quarterly
+		? 'https://buy.stripe.com/9AQ2bJ3Q81va2ly28c'
+		: 'https://buy.stripe.com/3csg2zbiA4Hm9O07sv'
+
+	return (
+		<section
+			id="subscribe"
+			data-quarterly={quarterly}
+			className="bg-white text-black accent-black data-[quarterly=true]:bg-black data-[quarterly=true]:text-white data-[quarterly=true]:accent-white flex flex-col p-5 gap-2 justify-between"
+		>
+			<div>
+				<label className="flex items-center gap-[10px]">
+					<input
+						type="checkbox"
+						checked={quarterly}
+						onChange={e => setQuarterly(e.target.checked)}
+					/>
+					{quarterly ? 'quarterly' : 'monthly'}
+				</label>
+			</div>
+			<p className="fs-heading">
+				<span className="font-[800]">{price}</span> / month
+			</p>
+			<p>
+				Perfect for startups that need on-going work that needs to be
+				dealt with great urgency.
+			</p>
+			<a
+				href={url}
+				className="bg-dust fs-heading w-full py-[0.4em] rounded-[100px] text-center leading-none font-bold text-black hover:bg-red hover:text-white transition-colors"
+			>
+				Subscribe
+			</a>
+		</section>
 	)
 }
 
@@ -210,8 +200,7 @@ const smallStar = (
 const logo = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="100%"
-		className="max-h-[40%]"
+		width="40%"
 		viewBox="0 0 400 90"
 		fill="none"
 	>
@@ -225,7 +214,7 @@ const logo = (
 const watch = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="50%"
+		className="max-h-[50%] max-w-[50%] w-full h-full object-contain"
 		fill="none"
 		viewBox="0 0 110 110"
 	>
@@ -246,54 +235,19 @@ const watch = (
 	</svg>
 )
 
-const bolt = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		className="max-w-[50%] max-h-[50%] w-[47px] object-contain"
-		fill="none"
-		viewBox="0 0 47 68"
-	>
-		<path
-			fill="currentColor"
-			fillRule="evenodd"
-			d="M12.398 0h30.276L28.257 23.983H47L13.84 68l4.903-31.206H0L12.398 0Z"
-			clipRule="evenodd"
-		/>
-	</svg>
-)
-
-const infinity = (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		className="max-w-[50%] max-h-[50%] w-[91px] object-contain"
-		fill="none"
-		viewBox="0 0 91 45"
-	>
-		<path
-			fill="currentColor"
-			d="M83.828 6.62C79.564 2.358 73.953 0 68.005 0c-5.386 0-10.66 2.581-15.71 7.519l-.113.112-6.958 7.182-7.967 8.304-6.958 7.182c-1.57 1.571-4.152 3.367-7.855 3.367-3.03 0-5.835-1.122-7.968-3.254-2.132-2.133-3.254-4.938-3.254-7.968 0-3.03 1.122-5.835 3.254-7.968 2.132-2.132 4.938-3.254 7.968-3.254 2.918 0 5.835 2.357 7.855 4.264l4.04 4.152 7.743-8.08-3.815-3.927-.112-.112C33.105 2.469 27.83 0 22.444 0 16.496 0 10.774 2.357 6.62 6.62 2.357 10.886 0 16.497 0 22.445s2.357 11.67 6.62 15.823c4.265 4.264 9.876 6.62 15.824 6.62 5.835 0 11.446-2.356 15.71-6.732l.113-.113 6.509-6.733 8.64-8.977 6.846-7.07c1.908-1.908 4.825-4.264 7.743-4.264 3.03 0 5.835 1.122 7.968 3.254 2.132 2.132 3.254 4.937 3.254 7.967 0 3.03-1.122 5.836-3.254 7.968-2.133 2.357-5.05 3.479-7.968 3.479-3.591 0-6.284-1.796-7.743-3.367l-4.04-4.152-7.855 8.08 3.815 3.928.112.112C56.56 42.53 62.17 45 68.005 45c5.948 0 11.67-2.357 15.823-6.62 4.264-4.265 6.62-9.876 6.62-15.824 0-6.06-2.356-11.783-6.62-15.935Z"
-		/>
-	</svg>
-)
-
 const featureStar = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
-		width="1.15em"
-		height="1.15em"
+		width="100%"
+		height="100%"
 		fill="none"
 		viewBox="0 0 20 20"
 	>
-		<circle
-			cx="10"
-			cy="10"
-			r="10"
-			className="fill-current group-hover:fill-white"
-		/>
+		<circle cx="10" cy="10" r="10" className="fill-current" />
 		<path
 			fill="#fff"
-			className="fill-white group-hover:fill-current"
-			d="M9.953 19v-9H1c4.957 0 8.953 4.04 8.953 9ZM9.953 1v9H1c4.957 0 8.953-4.017 8.953-9ZM9.953 1v9H19c-4.986 0-9.047-4.017-9.047-9ZM9.953 19v-9H19c-4.986 0-9.047 4.04-9.047 9Z"
+			className="fill-white"
+			d="M9.95 1C9.95 5.98 5.95 10 1 10C5.96 10 9.95 14.04 9.95 19C9.95 14.04 14.01 10 19 10C14.01 10 9.95 5.98 9.95 1Z"
 		/>
 	</svg>
 )
