@@ -36,37 +36,20 @@
     main {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "a a"
+        "b v"
+        "đ g"
+        "e e"
+        "d ž"
+        "z i"
+        "z k"
+        "l j";
     }
 
     main > section {
       aspect-ratio: unset;
       /* min-height: unset; */
-    }
-  }
-
-  @media (min-width: 1500px) {
-    main {
-      display: grid;
-      height: 100%;
-      max-height: 100vh;
-      grid-template-columns: repeat(10, 1fr);
-      grid-template-rows: repeat(10, 1fr);
-      grid-template-areas:
-        "a a b b v v g g d d"
-        "a a b b v v g g d d"
-        "đ đ e e e e e e d d"
-        "đ đ e e e e e e ž ž"
-        "đ đ e e e e e e ž ž"
-        "z z e e e e e e i i"
-        "z z e e e e e e i i"
-        "z z k k l l j j j j"
-        "z z k k l l j j j j"
-        "z z k k l l j j j j";
-    }
-
-    main > section {
-      min-height: unset;
-      aspect-ratio: unset;
     }
 
     #intro {
@@ -107,6 +90,47 @@
     }
     #subscribe {
       grid-area: j;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1500px) {
+    #watch,
+    #latest-work,
+    #recognitions,
+    #logos {
+      min-height: 220px;
+      aspect-ratio: 3/2;
+    }
+
+    #video {
+      min-height: 220px;
+      aspect-ratio: 16/9;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    main {
+      display: grid;
+      height: 100%;
+      max-height: 100vh;
+      grid-template-columns: repeat(10, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      grid-template-areas:
+        "a a b b v v g g d d"
+        "a a b b v v g g d d"
+        "đ đ e e e e e e d d"
+        "đ đ e e e e e e ž ž"
+        "đ đ e e e e e e ž ž"
+        "z z e e e e e e i i"
+        "z z e e e e e e i i"
+        "z z k k l l j j j j"
+        "z z k k l l j j j j"
+        "z z k k l l j j j j";
+    }
+
+    main > section {
+      min-height: unset;
+      aspect-ratio: unset;
     }
   }
 

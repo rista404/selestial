@@ -85,11 +85,14 @@ export default function Index() {
 				id="milijarde"
 				className="flex-1 flex-shrink-0 bg-white text-black p-4 relative flex flex-col justify-end"
 			>
-				<sup className="font-medium text-[1.8vw] absolute top-8 left-4 z-20">
+				<sup className="font-medium fs-heading 2xl:text-[1.8vw] absolute top-8 left-4 z-20">
 					$
 				</sup>
 				<div className="relative bg-white overflow-hidden">
-					<p className="select-none text-black tracking-[-0.08em] font-bold leading-[0.9] text-[7.9vw] pr-2">
+					<p
+						id="amount"
+						className="select-none text-black tracking-[-0.08em] font-bold leading-[0.9] text-[60vw] md:text-[14vw] 2xl:text-[7.9vw] pr-2"
+					>
 						.5b
 					</p>
 					<video
