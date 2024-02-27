@@ -2,7 +2,7 @@ import { Slider } from './slider'
 
 export function LogosBlock() {
 	return (
-		<Slider>
+		<Slider btnClassName="data-[current=0]:bg-white data-[current=2]:bg-white data-[current=4]:bg-white data-[current=1]:bg-black data-[current=3]:bg-black">
 			<div className="relative flex items-center justify-center bg-black">
 				{renaultGroupLogo}
 				<a

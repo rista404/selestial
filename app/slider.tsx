@@ -1,6 +1,10 @@
 import { Children, useEffect, useState } from 'react'
 
-export function Slider({ children }: { children: React.ReactNode }) {
+export function Slider({
+	children,
+	btnClassName,
+	delay = 5000,
+}: { children: React.ReactNode; btnClassName: string; delay?: number }) {
 	const [active, setActive] = useState(0)
 	const [mouseIn, setMouseIn] = useState(false)
 	const len = Children.count(children)
@@ -12,11 +16,11 @@ export function Slider({ children }: { children: React.ReactNode }) {
 
 		const timeout = setTimeout(() => {
 			setActive((active + 1) % len)
-		}, 5000)
+		}, delay)
 		return () => {
 			clearTimeout(timeout)
 		}
-	}, [active, mouseIn])
+	}, [active, mouseIn, len, delay])
 
 	return (
 		<div
@@ -35,9 +39,13 @@ export function Slider({ children }: { children: React.ReactNode }) {
 					{Array.from({ length: len }).map((_, i) => (
 						<button
 							key={i}
+							data-current={active}
 							data-active={i === active}
 							onClick={() => setActive(i)}
-							className="w-[7px] h-[7px] bg-white rounded-full my-1 mix-blend-difference opacity-20 transition data-[active=true]:opacity-100"
+							className={
+								`w-[7px] h-[7px] rounded-full my-1 opacity-20 transition data-[active=true]:opacity-100 ` +
+								(btnClassName ?? '')
+							}
 						/>
 					))}
 				</div>

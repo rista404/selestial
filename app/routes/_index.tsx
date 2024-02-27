@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Clock } from '~/clock'
 import { FAQBlock } from '~/faq'
 import { LogosBlock } from '~/logos'
+import { RecognitionsBlock } from '~/recognitions'
 
 const FEATURES = [
 	'Unlimited iterations',
@@ -54,7 +55,9 @@ export default function Index() {
 			<section id="latest-work" className="bg-[#FFCC33]"></section>
 
 			{/* Recognitions */}
-			<section id="recognitions" className="bg-[#FF4500]"></section>
+			<section id="recognitions">
+				<RecognitionsBlock />
+			</section>
 
 			{/* Logos */}
 			<section id="logos">
@@ -259,6 +262,7 @@ const smallStar = (
 const logo = (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
+		className="w-[140px] 2xl:w-[40%]"
 		width="40%"
 		viewBox="0 0 400 90"
 		fill="none"
