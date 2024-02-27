@@ -164,25 +164,42 @@ function SubscribeBlock() {
 		<section
 			id="subscribe"
 			data-quarterly={quarterly}
-			className="bg-white text-black accent-black data-[quarterly=true]:bg-black data-[quarterly=true]:text-white data-[quarterly=true]:accent-white flex flex-col p-5 gap-2 justify-between"
+			className="bg-white text-black accent-black data-[quarterly=true]:bg-black data-[quarterly=true]:text-white data-[quarterly=true]:accent-white flex flex-col p-5 gap-2 justify-between transition-colors"
 		>
-			<div>
-				<label className="flex items-center gap-[10px]">
+			<div className="flex items-center justify-between">
+				<label className="flex items-center gap-[10px] cursor-pointer select-none">
 					<input
+						hidden
 						type="checkbox"
 						checked={quarterly}
 						onChange={e => setQuarterly(e.target.checked)}
 					/>
+					<button className="pointer-events-none bg-dust w-[60px] h-[30px] relative rounded-[100px]">
+						<span
+							data-quarterly={quarterly}
+							className="bg-black rounded-full w-[28px] h-[28px] absolute top-[1px] left-[2px] transition-transform data-[quarterly=true]:translate-x-[29px]"
+						/>
+					</button>
 					{quarterly ? 'quarterly' : 'monthly'}
 				</label>
+				<div
+					hidden={!quarterly}
+					aria-hidden={!quarterly}
+					className="flex items-center gap-[10px] fs-small aria-hidden:invisible transition-none text-white"
+				>
+					<i className="h-[1.5em] w-[1.5em]">{subscribeSaveStar}</i>{' '}
+					<span>save $1k+</span>
+				</div>
 			</div>
-			<p className="fs-heading">
-				<span className="font-[800]">{price}</span> / month
-			</p>
-			<p>
-				Perfect for startups that need on-going work that needs to be
-				dealt with great urgency.
-			</p>
+			<div className="space-y-2">
+				<p className="fs-heading">
+					<span className="font-[800]">{price}</span> / month
+				</p>
+				<p className="fs-p">
+					Perfect for startups that need on-going work that needs to
+					be dealt with great urgency.
+				</p>
+			</div>
 			<a
 				href={url}
 				className="bg-dust fs-heading w-full py-[0.4em] rounded-[100px] text-center leading-none font-bold text-black hover:bg-red hover:text-white transition-colors"
@@ -256,8 +273,23 @@ const featureStar = (
 	>
 		<circle cx="10" cy="10" r="10" className="fill-current" />
 		<path
-			fill="#fff"
 			className="fill-white"
+			d="M9.95 1C9.95 5.98 5.95 10 1 10C5.96 10 9.95 14.04 9.95 19C9.95 14.04 14.01 10 19 10C14.01 10 9.95 5.98 9.95 1Z"
+		/>
+	</svg>
+)
+
+const subscribeSaveStar = (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="100%"
+		height="100%"
+		fill="none"
+		viewBox="0 0 20 20"
+	>
+		<circle cx="10" cy="10" r="10" className="fill-white" />
+		<path
+			className="fill-black"
 			d="M9.95 1C9.95 5.98 5.95 10 1 10C5.96 10 9.95 14.04 9.95 19C9.95 14.04 14.01 10 19 10C14.01 10 9.95 5.98 9.95 1Z"
 		/>
 	</svg>
