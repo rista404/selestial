@@ -128,7 +128,35 @@ export default function Index() {
 				<p>— George, Bondin</p>
 			</section>
 
-			<section id="misc" className="bg-red-100"></section>
+			<section id="misc" className="relative">
+				<video
+					className="bg-[#C248A0] -z-10 w-full h-full object-cover absolute inset-0 pointer-events-none"
+					autoPlay
+					muted
+					loop
+					playsInline
+				>
+					<source src="/infinity.webm" type="video/webm" />
+					<source src="/infinity.mp4" type="video/mp4" />
+				</video>
+				<div className="group w-full h-full flex items-center justify-center z-20">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						className="group-hover:invisible group-hover:opacity-0 transition max-h-[40%] max-w-[40%] w-full h-full object-contain"
+						fill="none"
+						viewBox="0 0 135 67"
+					>
+						<path
+							fill="#fff"
+							d="M125.118 9.858C118.753 3.508 110.378 0 101.501 0c-8.04 0-15.912 3.843-23.449 11.194l-.167.168L67.5 22.055 55.608 34.419 45.223 45.112c-2.345 2.34-6.197 5.013-11.724 5.013-4.523 0-8.71-1.671-11.892-4.846-3.183-3.174-4.858-7.351-4.858-11.863 0-4.51 1.675-8.688 4.858-11.862 3.182-3.175 7.37-4.846 11.892-4.846 4.355 0 8.71 3.509 11.724 6.35l6.03 6.181L62.81 17.21l-5.695-5.847-.167-.168C49.41 3.676 41.538 0 33.498 0 24.623 0 16.08 3.509 9.883 9.858 3.517 16.207 0 24.56 0 33.416c0 8.856 3.517 17.377 9.882 23.56 6.365 6.348 14.74 9.857 23.617 9.857 8.71 0 17.084-3.509 23.449-10.025l.167-.167 9.715-10.025 12.897-13.367 10.217-10.526c2.847-2.84 7.202-6.349 11.557-6.349 4.523 0 8.71 1.67 11.892 4.846 3.183 3.174 4.858 7.351 4.858 11.862s-1.675 8.689-4.858 11.863c-3.182 3.509-7.537 5.18-11.892 5.18-5.36 0-9.38-2.674-11.557-5.013l-6.03-6.182L72.19 50.96l5.695 5.848.167.167C84.417 63.325 92.792 67 101.501 67c8.877 0 17.42-3.509 23.617-9.858C131.483 50.793 135 42.44 135 33.583c0-9.022-3.517-17.543-9.882-23.725Z"
+						/>
+					</svg>
+					<p className="text-white leading-none fs-heading absolute transition opacity-0 invisible group-hover:visible group-hover:opacity-100">
+						<strong className="font-bold">Infinite</strong>{' '}
+						<span>Requests</span>
+					</p>
+				</div>
+			</section>
 
 			{/* Features */}
 			<section id="features" className="flex-1 bg-white p-5">
