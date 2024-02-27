@@ -2,11 +2,11 @@ import { Slider } from './slider'
 
 export function RecognitionsBlock() {
 	return (
-		<Slider delay={6000} btnClassName="bg-black group-hover:bg-white">
+		<Slider delay={4000} btnClassName="bg-black group-hover:bg-white">
 			<div className="relative flex items-center justify-center bg-white text-[#FF4500] transition group-hover:bg-[#FF4500] group-hover:text-white">
 				{awwardsLogo}
 				<a
-					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-black group-hover:text-white"
+					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute leading-none bottom-4 left-5 text-black group-hover:text-white"
 					href="https://www.awwwards.com/"
 					target="_blank"
 					rel="noreferrer"
@@ -17,7 +17,7 @@ export function RecognitionsBlock() {
 			<div className="relative flex items-center justify-center bg-white text-[#DD1B36] transition group-hover:bg-[#DD1B36] group-hover:text-white">
 				{odaLogo}
 				<a
-					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-black group-hover:text-white"
+					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute leading-none bottom-4 left-5 text-black group-hover:text-white"
 					href="https://www.onlinedesignawards.com/"
 					target="_blank"
 					rel="noreferrer"
@@ -28,7 +28,7 @@ export function RecognitionsBlock() {
 			<div className="relative flex items-center justify-center bg-white text-black transition group-hover:bg-black group-hover:text-white">
 				{fwaLogo}
 				<a
-					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-black group-hover:text-white"
+					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute leading-none bottom-4 left-5 text-black group-hover:text-white"
 					href="https://thefwa.com/"
 					target="_blank"
 					rel="noreferrer"

@@ -56,7 +56,12 @@ export default function Index() {
 
 			{/* Recognitions */}
 			<section id="recognitions">
-				<RecognitionsBlock />
+				<div className="w-full h-full relative">
+					<p className="fs-small absolute top-4 left-5 z-20 text-white">
+						Recognitions
+					</p>
+					<RecognitionsBlock />
+				</div>
 			</section>
 
 			{/* Logos */}

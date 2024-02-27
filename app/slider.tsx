@@ -29,7 +29,7 @@ export function Slider({
 			onMouseLeave={() => setMouseIn(false)}
 		>
 			<div
-				className="w-full h-full *:w-full *:h-full transition-transform"
+				className="w-full h-full *:w-full *:h-full transition-transform duration-[450ms]"
 				style={{ transform: `translateY(-${active * 100}%)` }}
 			>
 				{children}
