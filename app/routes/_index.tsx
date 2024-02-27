@@ -132,14 +132,14 @@ export default function Index() {
 						alt="George, Bondin"
 						className="absolute h-full object-contain transition group-hover:opacity-0 group-hover:invisible max-2xl:!invisible"
 					/>
-					<p className="absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible max-2xl:!visible max-2xl:!opacity-100">
+					<p className="fs-p absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible max-2xl:!visible max-2xl:!opacity-100">
 						Working with them was seamless—they guided us in
 						refining our vision and exploring our ideas, bringing us
 						closer to our desired result with each iteration. We
 						were thrilled with the final product!
 					</p>
 				</div>
-				<p>— George, Bondin</p>
+				<p className="fs-small">— George, Bondin</p>
 			</section>
 
 			<section id="misc" className="relative">

@@ -179,14 +179,6 @@
     font-size: clamp(0.75rem, 0.781vw + 0.125rem, 1.063rem);
   }
 
-  #djordje p {
-    font-size: clamp(0.75rem, 0.769vw + 0.014rem, 0.938rem);
-  }
-
-  #djordje p {
-    font-size: clamp(0.75rem, 0.769vw + 0.014rem, 0.938rem);
-  }
-
   #our-services small {
     font-size: clamp(0.75rem, 0.769vw + 0.014rem, 0.938rem);
   }
