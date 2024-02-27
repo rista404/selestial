@@ -23,7 +23,7 @@
   }
 
   main {
-    @apply max-2xl:space-y-5;
+    @apply max-md:space-y-5;
   }
 
   main > section {
@@ -40,6 +40,7 @@
 
     main > section {
       aspect-ratio: unset;
+      /* min-height: unset; */
     }
   }
 
@@ -112,10 +113,25 @@
   /* font sizes */
 
   .fs-heading {
-    font-size: clamp(1.75rem, 0.855vw + 0.949rem, 3rem);
+    font-size: 34px;
   }
   .fs-p {
-    font-size: clamp(0.875rem, 0.855vw + 0.074rem, 2.125rem);
+    font-size: 17px;
+  }
+  .fs-small {
+    font-size: 15px;
+  }
+
+  @media (min-width: 1500px) {
+    .fs-heading {
+      font-size: clamp(1.75rem, 0.855vw + 0.949rem, 3rem);
+    }
+    .fs-p {
+      font-size: clamp(0.875rem, 0.855vw + 0.074rem, 2.125rem);
+    }
+    .fs-small {
+      font-size: clamp(0.75rem, 0.769vw + 0.029rem, 1.875rem);
+    }
   }
 
   /* #intro p {

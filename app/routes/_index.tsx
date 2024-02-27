@@ -27,7 +27,7 @@ export default function Index() {
 			>
 				<div className="flex justify-between items-stretch">
 					{logo}
-					<div className="bg-white rounded-[100px] font-extrabold h-full px-2 flex items-center">
+					<div className="bg-white rounded-[100px] font-extrabold h-full px-2 flex items-center font-[system-ui,sans-serif]">
 						©‘{new Date().getFullYear().toString().slice(2)}
 					</div>
 				</div>
@@ -70,7 +70,8 @@ export default function Index() {
 				className="flex-1 flex-shrink-0 flex items-center justify-center bg-[#DFD1B4] text-center p-5"
 			>
 				<p className="leading-none">
-					<strong className="text-white font-bold">Shockingly</strong>{' '}
+					<strong className="text-white font-bold">Shockingly</strong>
+					<br />
 					<span className="text-black">Straightforward</span>
 				</p>
 			</section>
@@ -78,17 +79,27 @@ export default function Index() {
 			{/* Milijarde */}
 			<section
 				id="milijarde"
-				className="flex-1 flex-shrink-0 bg-[#F5D925] text-black p-4 relative flex flex-col justify-end"
+				className="flex-1 flex-shrink-0 bg-white text-black p-4 relative flex flex-col justify-end"
 			>
-				<sup className="font-medium text-[1.8vw] absolute top-8 left-4">
+				<sup className="font-medium text-[1.8vw] absolute top-8 left-4 z-20">
 					$
 				</sup>
-				<p className="tracking-[-0.08em] font-bold leading-[0.9] text-right text-[9vw] pr-2">
-					0.5b
-				</p>
-				<p className="font-medium line-clamp-1 leading-tight text-[0.83vw]">
-					After collaborating with us, our clients raised 0.3 billion
-					dollars to date
+				<div className="relative bg-white overflow-hidden">
+					<p className="select-none text-black tracking-[-0.08em] font-bold leading-[0.9] text-[7.5vw] pr-2">
+						.5b
+					</p>
+					<video
+						className="w-full h-full absolute inset-0 mix-blend-lighten pointer-events-none"
+						autoPlay
+						muted
+						loop
+						playsInline
+					>
+						<source src="/5b.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<p className="font-medium line-clamp-1 leading-tight fs-small">
+					We helped our clients raise $0.5 billion
 				</p>
 			</section>
 
