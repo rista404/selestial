@@ -198,7 +198,18 @@
     text-align: center;
     position: relative;
     border: 4px solid white;
-    @apply w-[110px] h-[110px] aspect-square;
+  }
+
+  @media (max-width: 1499px) {
+    .clock {
+      @apply max-h-[50%] max-w-[50%] h-full aspect-square;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .clock {
+      @apply w-[110px] h-[110px] aspect-square;
+    }
   }
 
   @media (min-width: 2000px) {
