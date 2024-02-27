@@ -134,7 +134,7 @@ export default function Index() {
 
 			<section id="misc" className="relative">
 				<video
-					className="bg-[#C248A0] -z-10 w-full h-full object-cover absolute inset-0 pointer-events-none"
+					className="bg-[#C248A0] -z-10 w-full h-full object-cover absolute inset-0 pointer-events-none rounded-2xl"
 					autoPlay
 					muted
 					loop
