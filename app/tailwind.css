@@ -79,10 +79,10 @@
       grid-area: v;
     }
     #recognitions {
-      grid-area: g;
-    }
-    #clients {
       grid-area: đ;
+    }
+    #logos {
+      grid-area: g;
     }
     #video {
       grid-area: e;

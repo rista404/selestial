@@ -1,5 +1,13 @@
 import type { MetaFunction } from '@remix-run/cloudflare'
 import { useState } from 'react'
+import {
+	renaultGroupLogo,
+	publicLogo,
+	trustMachinesLogo,
+	wordpressLogo,
+	foundersFundLogo,
+} from '~/logos'
+import { Slider } from '~/slider'
 
 const FEATURES = [
 	'Unlimited iterations',
@@ -55,12 +63,66 @@ export default function Index() {
 			{/* Recognitions */}
 			<section id="recognitions" className="bg-[#FF4500]"></section>
 
-			{/* Clients */}
-			<section
-				id="clients"
-				style={{ gridArea: 'đ' }}
-				className="bg-[black]"
-			></section>
+			{/* Logos */}
+			<section id="logos">
+				<Slider>
+					<div className="relative flex items-center justify-center bg-black">
+						{renaultGroupLogo}
+						<a
+							className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-white"
+							href="https://www.renaultgroup.com"
+							target="_blank"
+							rel="noreferrer"
+						>
+							renaultgroup.com
+						</a>
+					</div>
+					<div className="relative flex items-center justify-center bg-white">
+						{publicLogo}
+						<a
+							className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-black"
+							href="https://public.com"
+							target="_blank"
+							rel="noreferrer"
+						>
+							public.com
+						</a>
+					</div>
+					<div className="relative flex items-center justify-center bg-black">
+						{trustMachinesLogo}
+						<a
+							className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-white"
+							href="https://trustmachines.co/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							trustmachines.co
+						</a>
+					</div>
+					<div className="relative flex items-center justify-center bg-white">
+						{foundersFundLogo}
+						<a
+							className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-black"
+							href="https://foundersfund.com/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							foundersfund.com
+						</a>
+					</div>
+					<div className="relative flex items-center justify-center bg-[#0073AA]">
+						{wordpressLogo}
+						<a
+							className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-white"
+							href="https://wordpress.org/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							wordpress.org
+						</a>
+					</div>
+				</Slider>
+			</section>
 
 			{/* Video */}
 
@@ -120,9 +182,9 @@ export default function Index() {
 					<img
 						src="/djordje.png"
 						alt="George, Bondin"
-						className="absolute h-full object-contain transition group-hover:opacity-0 group-hover:invisible"
+						className="absolute h-full object-contain transition group-hover:opacity-0 group-hover:invisible max-2xl:!invisible"
 					/>
-					<p className="absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible">
+					<p className="absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible max-2xl:!visible max-2xl:!opacity-100">
 						Working with them was seamless—they guided us in
 						refining our vision and exploring our ideas, bringing us
 						closer to our desired result with each iteration. We
@@ -348,7 +410,7 @@ function FAQBlock() {
 	const [active, setActive] = useState('')
 	const q = FAQ.find(qq => qq.question === active)
 
-	let borderColor = q?.className?.includes('bg-black')
+	const borderColor = q?.className?.includes('bg-black')
 		? 'divide-white/10 border-white/10'
 		: 'divide-black/10 border-black/10'
 
