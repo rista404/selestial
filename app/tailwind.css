@@ -198,14 +198,22 @@
     text-align: center;
     position: relative;
     border: 4px solid white;
-    @apply max-h-[50%] max-w-[50%] h-full aspect-square;
+    @apply w-[110px] h-[110px] aspect-square;
+  }
+
+  @media (min-width: 2000px) {
+    .clock {
+      @apply w-[160px] h-[160px];
+    }
   }
 
   .clock::after {
     background: white;
     content: "";
-    width: 10px;
-    height: 10px;
+    width: 9%;
+    height: 9%;
+    max-width: 10px;
+    max-height: 10px;
     border-radius: 50%;
     position: absolute;
     z-index: 2;
@@ -217,10 +225,10 @@
   .hour_hand {
     position: absolute;
     width: 4px;
-    height: 20%;
+    height: 25%;
     background: white;
-    top: 30%;
-    left: 48%;
+    top: 25%;
+    left: 48.4%;
     transform-origin: bottom;
     border-radius: 4px;
   }
@@ -228,9 +236,9 @@
   .min_hand {
     position: absolute;
     width: 4px;
-    height: 30%;
+    height: 35%;
     background: white;
-    top: 21.5%;
+    top: 15%;
     left: 48%;
     transform-origin: bottom;
     border-radius: 4px;
