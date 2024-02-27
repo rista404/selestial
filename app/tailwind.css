@@ -174,18 +174,6 @@
   #slogan p {
     font-size: clamp(1.125rem, 1.86vw + -0.108rem, 2.125rem);
   }
-
-  #features li {
-    font-size: clamp(0.75rem, 0.781vw + 0.125rem, 1.063rem);
-  }
-
-  #our-services small {
-    font-size: clamp(0.75rem, 0.769vw + 0.014rem, 0.938rem);
-  }
-
-  #our-services p {
-    font-size: clamp(1.375rem, 2.124vw + -0.424rem, 2.125rem);
-  }
 }
 
 @layer utilities {

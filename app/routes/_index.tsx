@@ -178,7 +178,7 @@ export default function Index() {
 					{FEATURES.map(f => (
 						<li
 							key={f}
-							className="group flex gap-[0.6em] text-black items-center hover:font-bold hover:text-[#FF4500] font-medium"
+							className="group flex gap-[0.6em] text-black items-center hover:font-bold hover:text-[#FF4500] font-medium fs-p"
 						>
 							<i className="h-[1.2em] w-[1.2em]">{featureStar}</i>{' '}
 							{f}
