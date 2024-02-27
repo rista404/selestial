@@ -106,6 +106,15 @@
       min-height: 220px;
       aspect-ratio: 16/9;
     }
+
+    #slogan,
+    #milijarde,
+    #djordje,
+    #features,
+    #subscribe {
+      min-height: 220px;
+      aspect-ratio: 3/2;
+    }
   }
 
   @media (min-width: 1500px) {
