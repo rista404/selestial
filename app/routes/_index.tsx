@@ -73,7 +73,7 @@ export default function Index() {
 				id="slogan"
 				className="flex-1 flex-shrink-0 flex items-center justify-center bg-[#DFD1B4] text-center p-5"
 			>
-				<p className="leading-none">
+				<p className="leading-none max-2xl:!fs-heading">
 					<strong className="text-white font-bold">Shockingly</strong>
 					<br />
 					<span className="text-black">Straightforward</span>
