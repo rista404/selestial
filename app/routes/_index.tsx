@@ -227,7 +227,7 @@ function SubscribeBlock() {
 				<div
 					hidden={!quarterly}
 					aria-hidden={!quarterly}
-					className="flex items-center gap-[10px] fs-small aria-hidden:invisible transition-none text-white"
+					className="flex items-center gap-[10px] fs-small aria-hidden:invisible transition-none text-yellow"
 				>
 					<i className="h-[1.5em] w-[1.5em]">{subscribeSaveStar}</i>{' '}
 					<span>save $1k+</span>
@@ -306,7 +306,7 @@ const subscribeSaveStar = (
 		fill="none"
 		viewBox="0 0 20 20"
 	>
-		<circle cx="10" cy="10" r="10" className="fill-white" />
+		<circle cx="10" cy="10" r="10" className="fill-yellow" />
 		<path
 			className="fill-black"
 			d="M9.95 1C9.95 5.98 5.95 10 1 10C5.96 10 9.95 14.04 9.95 19C9.95 14.04 14.01 10 19 10C14.01 10 9.95 5.98 9.95 1Z"
