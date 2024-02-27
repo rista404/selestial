@@ -1,3 +1,67 @@
+import { Slider } from './slider'
+
+export function LogosBlock() {
+	return (
+		<Slider>
+			<div className="relative flex items-center justify-center bg-black">
+				{renaultGroupLogo}
+				<a
+					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-white"
+					href="https://www.renaultgroup.com"
+					target="_blank"
+					rel="noreferrer"
+				>
+					renaultgroup.com
+				</a>
+			</div>
+			<div className="relative flex items-center justify-center bg-white">
+				{publicLogo}
+				<a
+					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-black"
+					href="https://public.com"
+					target="_blank"
+					rel="noreferrer"
+				>
+					public.com
+				</a>
+			</div>
+			<div className="relative flex items-center justify-center bg-black">
+				{trustMachinesLogo}
+				<a
+					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-white"
+					href="https://trustmachines.co/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					trustmachines.co
+				</a>
+			</div>
+			<div className="relative flex items-center justify-center bg-white">
+				{foundersFundLogo}
+				<a
+					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-black"
+					href="https://foundersfund.com/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					foundersfund.com
+				</a>
+			</div>
+			<div className="relative flex items-center justify-center bg-[#0073AA]">
+				{wordpressLogo}
+				<a
+					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute bottom leading-none bottom-4 left-5 text-white"
+					href="https://wordpress.org/"
+					target="_blank"
+					rel="noreferrer"
+				>
+					wordpress.org
+				</a>
+			</div>
+		</Slider>
+	)
+}
+
 //
 // LOGOS
 //

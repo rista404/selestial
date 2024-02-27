@@ -187,3 +187,59 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+@layer components {
+  .clock {
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    border: 4px solid white;
+    @apply max-h-[50%] max-w-[50%] h-full aspect-square;
+  }
+
+  .clock::after {
+    background: white;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hour_hand {
+    position: absolute;
+    width: 4px;
+    height: 20%;
+    background: white;
+    top: 30%;
+    left: 48%;
+    transform-origin: bottom;
+    border-radius: 4px;
+  }
+
+  .min_hand {
+    position: absolute;
+    width: 4px;
+    height: 30%;
+    background: white;
+    top: 21.5%;
+    left: 48%;
+    transform-origin: bottom;
+    border-radius: 4px;
+  }
+
+  .sec_hand {
+    position: absolute;
+    width: 1px;
+    height: 40%;
+    background: #ff4500;
+    top: 9.5%;
+    left: 50%;
+    transform-origin: bottom;
+    border-radius: 1px;
+  }
+}
