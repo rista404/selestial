@@ -1,10 +1,11 @@
 import type { MetaFunction } from '@remix-run/cloudflare'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Clock } from '~/clock'
 import { FAQBlock } from '~/faq'
 import { LatestWorkBlock } from '~/latest-work'
 import { LogosBlock } from '~/logos'
 import { RecognitionsBlock } from '~/recognitions'
+import CustomCursor from 'custom-cursor.js'
 
 const FEATURES = [
 	'Unlimited iterations',
@@ -27,176 +28,204 @@ export const meta: MetaFunction = () => {
 	]
 }
 
+function customCursor() {
+	console.log(CustomCursor)
+
+	// Following options represent the defaults
+	const options = {
+		// Whether or not the true cursor should be hidden when the custom cursor is initialized
+		hideTrueCursor: true,
+
+		// Array of DOM elements/selector strings that add interactions on hover
+		focusElements: ['a', 'button'],
+
+		// Class applied when the true cursor is hovering over a focusElement
+		focusClass: 'cursor--focused',
+	}
+	new CustomCursor.default('.cursor', options)
+		.initialize()
+		.setPosition(-40, -40)
+}
+
 export default function Index() {
+	useEffect(customCursor, [])
+
 	return (
-		<main className="gap-5 p-5 w-full">
-			<section
-				id="intro"
-				className="text-black flex flex-col justify-between gap-3 rounded-none"
-			>
-				<div className="flex justify-between items-stretch">
-					{logo}
-					<div className="bg-white rounded-[100px] font-extrabold h-full px-2 flex items-center font-[system-ui,sans-serif]">
-						©‘{new Date().getFullYear().toString().slice(2)}
+		<>
+			<div className="cursor"></div>
+			<main className="gap-5 p-5 w-full">
+				<section
+					id="intro"
+					className="text-black flex flex-col justify-between gap-3 rounded-none"
+				>
+					<div className="flex justify-between items-stretch">
+						{logo}
+						<div className="bg-white rounded-[100px] font-extrabold h-full px-2 flex items-center font-[system-ui,sans-serif]">
+							©‘{new Date().getFullYear().toString().slice(2)}
+						</div>
 					</div>
-				</div>
-				<h1 className="sr-only">Selestial</h1>
-				<p className="fs-p">
-					We help startups raise funds with branding, web and graphic
-					design. Subscribe to our services and we will become a
-					crucial part of your team to drive you home.
-				</p>
-			</section>
-
-			{/* Sat */}
-			<section
-				id="watch"
-				className="bg-black text-white flex items-center justify-center relative"
-			>
-				<Clock />
-			</section>
-
-			{/* Latest Work */}
-			<section id="latest-work">
-				<LatestWorkBlock />
-			</section>
-
-			{/* Recognitions */}
-			<section id="recognitions">
-				<div className="w-full h-full relative">
-					<p className="fs-small absolute top-4 left-5 z-20 text-white">
-						Recognitions
+					<h1 className="sr-only">Selestial</h1>
+					<p className="fs-p">
+						We help startups raise funds with branding, web and
+						graphic design. Subscribe to our services and we will
+						become a crucial part of your team to drive you home.
 					</p>
-					<RecognitionsBlock />
-				</div>
-			</section>
+				</section>
 
-			{/* Logos */}
-			<section id="logos">
-				<LogosBlock />
-			</section>
+				{/* Sat */}
+				<section
+					id="watch"
+					className="bg-black text-white flex items-center justify-center relative"
+				>
+					<Clock />
+				</section>
 
-			{/* Video */}
+				{/* Latest Work */}
+				<section id="latest-work">
+					<LatestWorkBlock />
+				</section>
 
-			<section id="video" className="bg-[#CDC3B3]"></section>
+				{/* Recognitions */}
+				<section id="recognitions">
+					<div className="w-full h-full relative">
+						<p className="fs-small absolute top-4 left-5 z-20 text-white">
+							Recognitions
+						</p>
+						<RecognitionsBlock />
+					</div>
+				</section>
 
-			{/* Vrlo jednostavno */}
-			<section
-				id="slogan"
-				className="flex-1 flex-shrink-0 flex items-center justify-center bg-[#DFD1B4] text-center p-5"
-			>
-				<p className="leading-none max-2xl:!fs-heading">
-					<strong className="text-white font-bold">Shockingly</strong>
-					<br />
-					<span className="text-black">Straightforward</span>
-				</p>
-			</section>
+				{/* Logos */}
+				<section id="logos">
+					<LogosBlock />
+				</section>
 
-			{/* Milijarde */}
-			<section
-				id="milijarde"
-				className="flex-1 flex-shrink-0 bg-white text-black p-4 relative flex flex-col justify-end"
-			>
-				<sup className="font-medium fs-heading 2xl:text-[1.8vw] absolute top-8 left-4 z-20">
-					$
-				</sup>
-				<div className="relative bg-white overflow-hidden">
-					<p
-						id="amount"
-						className="select-none text-black tracking-[-0.08em] font-bold leading-[0.9] text-[50vw] sm:text-[60vw] md:text-[28vw] 2xl:text-[7.9vw] pr-2"
-					>
-						.5b
+				{/* Video */}
+
+				<section id="video" className="bg-[#CDC3B3]"></section>
+
+				{/* Vrlo jednostavno */}
+				<section
+					id="slogan"
+					className="flex-1 flex-shrink-0 flex items-center justify-center bg-[#DFD1B4] text-center p-5"
+				>
+					<p className="leading-none max-2xl:!fs-heading">
+						<strong className="text-white font-bold">
+							Shockingly
+						</strong>
+						<br />
+						<span className="text-black">Straightforward</span>
 					</p>
+				</section>
+
+				{/* Milijarde */}
+				<section
+					id="milijarde"
+					className="flex-1 flex-shrink-0 bg-white text-black p-4 relative flex flex-col justify-end"
+				>
+					<sup className="font-medium fs-heading 2xl:text-[1.8vw] absolute top-8 left-4 z-20">
+						$
+					</sup>
+					<div className="relative bg-white overflow-hidden">
+						<p
+							id="amount"
+							className="select-none text-black tracking-[-0.08em] font-bold leading-[0.9] text-[50vw] sm:text-[60vw] md:text-[28vw] 2xl:text-[7.9vw] pr-2"
+						>
+							.5b
+						</p>
+						<video
+							className="w-full h-full absolute inset-0 mix-blend-lighten pointer-events-none"
+							autoPlay
+							muted
+							loop
+							playsInline
+						>
+							<source src="/5b.mp4" type="video/mp4" />
+						</video>
+					</div>
+					<p className="font-medium line-clamp-1 leading-tight fs-small">
+						We helped our clients raise $0.5 billion
+					</p>
+				</section>
+
+				{/* FAQ */}
+				<section id="faq" className="bg-[#EDEDED]">
+					<FAQBlock />
+				</section>
+
+				{/* Djordje */}
+				<section
+					id="djordje"
+					className="group flex-1 flex gap-4 flex-col bg-[#ECE5D6] p-5 font-medium"
+				>
+					<div>{smallStar}</div>
+					<div className="flex relative justify-center items-center h-full">
+						<img
+							src="/djordje.png"
+							alt="George, Bondin"
+							className="absolute h-full object-contain transition group-hover:opacity-0 group-hover:invisible max-2xl:!invisible"
+						/>
+						<p className="fs-p absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible max-2xl:!visible max-2xl:!opacity-100">
+							Working with them was seamless—they guided us in
+							refining our vision and exploring our ideas,
+							bringing us closer to our desired result with each
+							iteration. We were thrilled with the final product!
+						</p>
+					</div>
+					<p className="fs-small">— George, Bondin</p>
+				</section>
+
+				<section id="misc" className="relative">
 					<video
-						className="w-full h-full absolute inset-0 mix-blend-lighten pointer-events-none"
+						className="bg-[#C248A0] -z-10 w-full h-full object-cover absolute inset-0 pointer-events-none rounded-2xl"
 						autoPlay
 						muted
 						loop
 						playsInline
 					>
-						<source src="/5b.mp4" type="video/mp4" />
+						<source src="/infinity.webm" type="video/webm" />
+						<source src="/infinity.mp4" type="video/mp4" />
 					</video>
-				</div>
-				<p className="font-medium line-clamp-1 leading-tight fs-small">
-					We helped our clients raise $0.5 billion
-				</p>
-			</section>
-
-			{/* FAQ */}
-			<section id="faq" className="bg-[#EDEDED]">
-				<FAQBlock />
-			</section>
-
-			{/* Djordje */}
-			<section
-				id="djordje"
-				className="group flex-1 flex gap-4 flex-col bg-[#ECE5D6] p-5 font-medium"
-			>
-				<div>{smallStar}</div>
-				<div className="flex relative justify-center items-center h-full">
-					<img
-						src="/djordje.png"
-						alt="George, Bondin"
-						className="absolute h-full object-contain transition group-hover:opacity-0 group-hover:invisible max-2xl:!invisible"
-					/>
-					<p className="fs-p absolute top-0 transition invisible opacity-0 group-hover:opacity-100 group-hover:visible max-2xl:!visible max-2xl:!opacity-100">
-						Working with them was seamless—they guided us in
-						refining our vision and exploring our ideas, bringing us
-						closer to our desired result with each iteration. We
-						were thrilled with the final product!
-					</p>
-				</div>
-				<p className="fs-small">— George, Bondin</p>
-			</section>
-
-			<section id="misc" className="relative">
-				<video
-					className="bg-[#C248A0] -z-10 w-full h-full object-cover absolute inset-0 pointer-events-none rounded-2xl"
-					autoPlay
-					muted
-					loop
-					playsInline
-				>
-					<source src="/infinity.webm" type="video/webm" />
-					<source src="/infinity.mp4" type="video/mp4" />
-				</video>
-				<div className="group w-full h-full flex items-center justify-center z-20">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						className="group-hover:invisible group-hover:opacity-0 transition max-h-[40%] max-w-[40%] w-full h-full object-contain"
-						fill="none"
-						viewBox="0 0 135 67"
-					>
-						<path
-							fill="#fff"
-							d="M125.118 9.858C118.753 3.508 110.378 0 101.501 0c-8.04 0-15.912 3.843-23.449 11.194l-.167.168L67.5 22.055 55.608 34.419 45.223 45.112c-2.345 2.34-6.197 5.013-11.724 5.013-4.523 0-8.71-1.671-11.892-4.846-3.183-3.174-4.858-7.351-4.858-11.863 0-4.51 1.675-8.688 4.858-11.862 3.182-3.175 7.37-4.846 11.892-4.846 4.355 0 8.71 3.509 11.724 6.35l6.03 6.181L62.81 17.21l-5.695-5.847-.167-.168C49.41 3.676 41.538 0 33.498 0 24.623 0 16.08 3.509 9.883 9.858 3.517 16.207 0 24.56 0 33.416c0 8.856 3.517 17.377 9.882 23.56 6.365 6.348 14.74 9.857 23.617 9.857 8.71 0 17.084-3.509 23.449-10.025l.167-.167 9.715-10.025 12.897-13.367 10.217-10.526c2.847-2.84 7.202-6.349 11.557-6.349 4.523 0 8.71 1.67 11.892 4.846 3.183 3.174 4.858 7.351 4.858 11.862s-1.675 8.689-4.858 11.863c-3.182 3.509-7.537 5.18-11.892 5.18-5.36 0-9.38-2.674-11.557-5.013l-6.03-6.182L72.19 50.96l5.695 5.848.167.167C84.417 63.325 92.792 67 101.501 67c8.877 0 17.42-3.509 23.617-9.858C131.483 50.793 135 42.44 135 33.583c0-9.022-3.517-17.543-9.882-23.725Z"
-						/>
-					</svg>
-					<p className="text-white leading-none fs-heading absolute transition opacity-0 invisible group-hover:visible group-hover:opacity-100">
-						<strong className="font-bold">Infinite</strong>{' '}
-						<span>Requests</span>
-					</p>
-				</div>
-			</section>
-
-			{/* Features */}
-			<section id="features" className="flex-1 bg-white p-5">
-				<ul className="h-full flex flex-col justify-between">
-					{FEATURES.map(f => (
-						<li
-							key={f}
-							className="group flex gap-[0.6em] text-black items-center hover:font-bold hover:text-[#FF4500] font-medium fs-p"
+					<div className="group w-full h-full flex items-center justify-center z-20">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							className="group-hover:invisible group-hover:opacity-0 transition max-h-[40%] max-w-[40%] w-full h-full object-contain"
+							fill="none"
+							viewBox="0 0 135 67"
 						>
-							<i className="h-[1.2em] w-[1.2em]">{featureStar}</i>{' '}
-							{f}
-						</li>
-					))}
-				</ul>
-			</section>
+							<path
+								fill="#fff"
+								d="M125.118 9.858C118.753 3.508 110.378 0 101.501 0c-8.04 0-15.912 3.843-23.449 11.194l-.167.168L67.5 22.055 55.608 34.419 45.223 45.112c-2.345 2.34-6.197 5.013-11.724 5.013-4.523 0-8.71-1.671-11.892-4.846-3.183-3.174-4.858-7.351-4.858-11.863 0-4.51 1.675-8.688 4.858-11.862 3.182-3.175 7.37-4.846 11.892-4.846 4.355 0 8.71 3.509 11.724 6.35l6.03 6.181L62.81 17.21l-5.695-5.847-.167-.168C49.41 3.676 41.538 0 33.498 0 24.623 0 16.08 3.509 9.883 9.858 3.517 16.207 0 24.56 0 33.416c0 8.856 3.517 17.377 9.882 23.56 6.365 6.348 14.74 9.857 23.617 9.857 8.71 0 17.084-3.509 23.449-10.025l.167-.167 9.715-10.025 12.897-13.367 10.217-10.526c2.847-2.84 7.202-6.349 11.557-6.349 4.523 0 8.71 1.67 11.892 4.846 3.183 3.174 4.858 7.351 4.858 11.862s-1.675 8.689-4.858 11.863c-3.182 3.509-7.537 5.18-11.892 5.18-5.36 0-9.38-2.674-11.557-5.013l-6.03-6.182L72.19 50.96l5.695 5.848.167.167C84.417 63.325 92.792 67 101.501 67c8.877 0 17.42-3.509 23.617-9.858C131.483 50.793 135 42.44 135 33.583c0-9.022-3.517-17.543-9.882-23.725Z"
+							/>
+						</svg>
+						<p className="text-white leading-none fs-heading absolute transition opacity-0 invisible group-hover:visible group-hover:opacity-100">
+							<strong className="font-bold">Infinite</strong>{' '}
+							<span>Requests</span>
+						</p>
+					</div>
+				</section>
 
-			{/* Subscribe */}
-			<SubscribeBlock />
-		</main>
+				{/* Features */}
+				<section id="features" className="flex-1 bg-white p-5">
+					<ul className="h-full flex flex-col justify-between">
+						{FEATURES.map(f => (
+							<li
+								key={f}
+								className="group flex gap-[0.6em] text-black items-center hover:font-bold hover:text-[#FF4500] font-medium fs-p"
+							>
+								<i className="h-[1.2em] w-[1.2em]">
+									{featureStar}
+								</i>{' '}
+								{f}
+							</li>
+						))}
+					</ul>
+				</section>
+
+				{/* Subscribe */}
+				<SubscribeBlock />
+			</main>
+		</>
 	)
 }
 

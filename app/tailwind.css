@@ -209,6 +209,29 @@
 }
 
 @layer components {
+  .cursor {
+    background-color: #ffcc33;
+    mix-blend-mode: difference;
+    display: none;
+    pointer-events: none;
+    user-select: none;
+    top: -20px;
+    left: -20px;
+    position: fixed;
+    will-change: transform;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+
+  .cursor.cursor--initialized {
+    display: block;
+  }
+  .cursor.cursor--off-screen {
+    opacity: 0;
+  }
+
   .clock {
     border-radius: 50%;
     text-align: center;
