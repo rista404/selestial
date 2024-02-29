@@ -100,7 +100,7 @@ export default function Index() {
 				<div className="relative bg-white overflow-hidden">
 					<p
 						id="amount"
-						className="select-none text-black tracking-[-0.08em] font-bold leading-[0.9] text-[60vw] md:text-[28vw] 2xl:text-[7.9vw] pr-2"
+						className="select-none text-black tracking-[-0.08em] font-bold leading-[0.9] text-[50vw] sm:text-[60vw] md:text-[28vw] 2xl:text-[7.9vw] pr-2"
 					>
 						.5b
 					</p>

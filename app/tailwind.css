@@ -28,8 +28,6 @@
 
   main > section {
     @apply rounded-2xl overflow-hidden max-w-full;
-    min-height: 220px;
-    aspect-ratio: 3/2;
   }
 
   @media (min-width: 768px) {
@@ -93,7 +91,11 @@
     }
   }
 
-  @media (min-width: 768px) and (max-width: 1500px) {
+  @media (max-width: 1500px) {
+    #intro {
+      min-height: 220px;
+    }
+
     #watch,
     #latest-work,
     #recognitions,
@@ -102,6 +104,7 @@
       aspect-ratio: 3/2;
     }
 
+    #misc,
     #video {
       min-height: 220px;
       aspect-ratio: 16/9;
@@ -109,10 +112,14 @@
 
     #slogan,
     #milijarde,
-    #djordje,
+    #djordje {
+      min-height: 220px;
+      aspect-ratio: 3/2;
+    }
+
     #features,
     #subscribe {
-      min-height: 220px;
+      min-height: 320px;
       aspect-ratio: 3/2;
     }
   }
