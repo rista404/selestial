@@ -17,8 +17,12 @@ const FEATURES = [
 
 export const meta: MetaFunction = () => {
 	return [
-		{ title: 'Selestial' },
-		{ name: 'description', content: 'Welcome to Remix!' },
+		{ title: 'selestial' },
+		{
+			name: 'description',
+			content:
+				'Launch your startup to greatness — partner with Selestial.',
+		},
 	]
 }
 
