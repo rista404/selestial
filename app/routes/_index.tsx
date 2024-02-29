@@ -29,7 +29,17 @@ export const meta: MetaFunction = () => {
 }
 
 function customCursor() {
-	console.log(CustomCursor)
+	function isTouchDevice() {
+		return (
+			'ontouchstart' in window ||
+			navigator.maxTouchPoints > 0 ||
+			navigator.msMaxTouchPoints > 0
+		)
+	}
+
+	if (isTouchDevice()) {
+		return
+	}
 
 	// Following options represent the defaults
 	const options = {
