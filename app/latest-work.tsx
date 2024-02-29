@@ -1,34 +1,57 @@
+import { useState } from 'react'
 import { Slider } from './slider'
 
 export function LatestWorkBlock() {
+	const [curr, setCurr] = useState(0)
+
 	return (
-		<Slider delay={6000} btnClassName="bg-black group-hover:bg-white">
-			<div className="relative flex items-center justify-center bg-[#FFCC33] text-black">
-				{renaultGroup}
-				<a
-					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute leading-none bottom-4 left-5 text-black"
-					href="https://www.renaultgroup.com"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Renault Group
-				</a>
-			</div>
-			<div className="relative flex items-center justify-center bg-[black] text-whute">
-				{secondGraph}
-				<a
-					className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute leading-none bottom-4 left-5 text-white"
-					href="https://www.renaultgroup.com"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Renault Group
-				</a>
-			</div>
-			<div className="relative flex items-center justify-center bg-[black] text-white">
-				{fwaLogo}
-			</div>
-		</Slider>
+		<div className="w-full h-full relative group/b">
+			<p
+				data-current={curr}
+				className="fs-small absolute top-4 left-5 z-20 opacity-0 group-hover/b:opacity-100 transition data-[current=0]:text-black data-[current=2]:text-white data-[current=1]:text-white"
+			>
+				Latest work
+			</p>
+			<Slider
+				delay={6000}
+				onActiveChange={setCurr}
+				btnClassName="data-[current=0]:bg-black data-[current=2]:bg-white data-[current=1]:bg-white"
+			>
+				<div className="relative flex items-center justify-center bg-[#FFCC33] text-black">
+					{renaultGroup}
+					<a
+						className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute leading-none bottom-4 left-5 text-black"
+						href="https://www.renaultgroup.com"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Renault Group
+					</a>
+				</div>
+				<div className="relative flex items-center justify-center bg-[black] text-whute">
+					{secondGraph}
+					<a
+						className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute leading-none bottom-4 left-5 text-white"
+						href="https://www.renaultgroup.com"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Renault Group
+					</a>
+				</div>
+				<div className="relative flex items-center justify-center bg-[black] text-white">
+					{fwaLogo}
+					<a
+						className="2xl:opacity-0 transition 2xl:group-hover:opacity-100 fs-small absolute leading-none bottom-4 left-5 text-white"
+						href="https://www.renaultgroup.com"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Renault Group
+					</a>
+				</div>
+			</Slider>
+		</div>
 	)
 }
 

@@ -58,12 +58,7 @@ export default function Index() {
 
 			{/* Latest Work */}
 			<section id="latest-work">
-				<div className="w-full h-full relative">
-					<p className="fs-small absolute top-4 left-5 z-20 text-white">
-						Latest work
-					</p>
-					<LatestWorkBlock />
-				</div>
+				<LatestWorkBlock />
 			</section>
 
 			{/* Recognitions */}

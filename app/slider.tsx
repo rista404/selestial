@@ -5,7 +5,13 @@ export function Slider({
 	children,
 	btnClassName,
 	delay = 5000,
-}: { children: React.ReactNode; btnClassName: string; delay?: number }) {
+	onActiveChange,
+}: {
+	children: React.ReactNode
+	btnClassName: string
+	delay?: number
+	onActiveChange?: (idx: number) => void
+}) {
 	const [active, setActive] = useState(0)
 	const [mouseIn, setMouseIn] = useState(false)
 	const len = Children.count(children)
@@ -22,6 +28,12 @@ export function Slider({
 			clearTimeout(timeout)
 		}
 	}, [active, mouseIn, len, delay])
+
+	useEffect(() => {
+		if (onActiveChange) {
+			onActiveChange(active)
+		}
+	}, [active, onActiveChange])
 
 	const { onTouchStart, onTouchMove } = useTouchSwipe(
 		() => setActive(active => (active + 1) % len),
