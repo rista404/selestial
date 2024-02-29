@@ -2,6 +2,7 @@ import type { MetaFunction } from '@remix-run/cloudflare'
 import { useState } from 'react'
 import { Clock } from '~/clock'
 import { FAQBlock } from '~/faq'
+import { LatestWorkBlock } from '~/latest-work'
 import { LogosBlock } from '~/logos'
 import { RecognitionsBlock } from '~/recognitions'
 
@@ -56,7 +57,14 @@ export default function Index() {
 			</section>
 
 			{/* Latest Work */}
-			<section id="latest-work" className="bg-[#FFCC33]"></section>
+			<section id="latest-work">
+				<div className="w-full h-full relative">
+					<p className="fs-small absolute top-4 left-5 z-20 text-white">
+						Latest work
+					</p>
+					<LatestWorkBlock />
+				</div>
+			</section>
 
 			{/* Recognitions */}
 			<section id="recognitions">
