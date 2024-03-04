@@ -117,7 +117,10 @@
       aspect-ratio: 3/2;
     }
 
-    #features,
+    #features {
+      min-height: max-content;
+    }
+
     #subscribe {
       min-height: 320px;
       aspect-ratio: 3/2;

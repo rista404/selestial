@@ -188,7 +188,7 @@ export default function Index() {
 					<p className="fs-small">— George, Bondin</p>
 				</section>
 
-				<section id="misc" className="relative">
+				<section id="misc" className="relative flex items-center">
 					<video
 						className="bg-[#C248A0] -z-10 w-full h-full object-cover absolute inset-0 pointer-events-none rounded-2xl"
 						autoPlay
@@ -220,7 +220,7 @@ export default function Index() {
 
 				{/* Features */}
 				<section id="features" className="flex-1 bg-white p-5">
-					<ul className="h-full flex flex-col justify-between">
+					<ul className="h-full flex flex-col justify-between max-2xl:space-y-[0.6em]">
 						{FEATURES.map(f => (
 							<li
 								key={f}

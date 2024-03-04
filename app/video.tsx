@@ -43,7 +43,7 @@ export function Video() {
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
 					viewBox="0 0 123 140"
-					className="max-h-[40%] max-w-[40%] w-full h-full object-contain group-hover:scale-95 transition"
+					className="max-h-[30%] max-w-[30%] w-full h-full object-contain group-hover:scale-95 transition"
 				>
 					<path
 						fill="#fff"
