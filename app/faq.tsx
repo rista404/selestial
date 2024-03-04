@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const EMAIL = 'hi@selestial.co'
 
@@ -77,33 +77,49 @@ const FAQ = [
 	{
 		question: 'Contact.',
 		className: 'bg-dust',
-		answer: (
-			<div>
-				<p>Have questions, or want to say hi? Write us an email.</p>
-				<div className="pt-6 text-red flex w-full items-center justify-between font-bold fs-p">
-					<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-					<button
-						onClick={() => {
-							navigator.clipboard.writeText(EMAIL)
-						}}
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							height="1.2em"
-							fill="none"
-							viewBox="0 0 19 22"
-						>
-							<path
-								fill="currentColor"
-								d="M17 18H6c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 4 16V2c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 6 0h7l6 6v10c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 17 18ZM12 7V2H6v14h11V7h-5ZM2 22c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 0 20V6h2v14h11v2H2Z"
-							/>
-						</svg>
-					</button>
-				</div>
-			</div>
-		),
+		answer: <Contact />,
 	},
 ]
+
+function Contact() {
+	const [copied, setCopied] = useState(false)
+
+	useEffect(() => {
+		if (copied) {
+			const timeout = setTimeout(() => {
+				setCopied(false)
+			}, 2000)
+			return () => clearTimeout(timeout)
+		}
+	}, [copied])
+
+	return (
+		<div>
+			<p>Have questions, or want to say hi? Write us an email.</p>
+			<div className="pt-6 text-red flex w-full items-center justify-between font-bold fs-p">
+				<a href={`mailto:${EMAIL}`}>{copied ? 'Copied.' : EMAIL}</a>
+				<button
+					onClick={() => {
+						navigator.clipboard.writeText(EMAIL)
+						setCopied(true)
+					}}
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						height="1.2em"
+						fill="none"
+						viewBox="0 0 19 22"
+					>
+						<path
+							fill="currentColor"
+							d="M17 18H6c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 4 16V2c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 6 0h7l6 6v10c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 17 18ZM12 7V2H6v14h11V7h-5ZM2 22c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 0 20V6h2v14h11v2H2Z"
+						/>
+					</svg>
+				</button>
+			</div>
+		</div>
+	)
+}
 
 export function FAQBlock() {
 	const [active, setActive] = useState('')
