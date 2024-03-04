@@ -6,6 +6,7 @@ import { LatestWorkBlock } from '~/latest-work'
 import { LogosBlock } from '~/logos'
 import { RecognitionsBlock } from '~/recognitions'
 import CustomCursor from 'custom-cursor.js'
+import { Video } from '~/video'
 
 const FEATURES = [
 	'Unlimited iterations',
@@ -112,7 +113,9 @@ export default function Index() {
 
 				{/* Video */}
 
-				<section id="video" className="bg-[#CDC3B3]"></section>
+				<section id="video">
+					<Video />
+				</section>
 
 				{/* Vrlo jednostavno */}
 				<section
