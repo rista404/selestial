@@ -35,18 +35,11 @@ export function Slider({
 		}
 	}, [active, onActiveChange])
 
-	const { onTouchStart, onTouchMove } = useTouchSwipe(
-		() => setActive(active => (active + 1) % len),
-		() => setActive(active => Math.max(active - 1, 0) % len),
-	)
-
 	return (
 		<div
 			className="group w-full h-full overflow-hidden relative max-2xl:touch-none"
 			onMouseEnter={() => setMouseIn(true)}
 			onMouseLeave={() => setMouseIn(false)}
-			onTouchStart={onTouchStart}
-			onTouchMove={onTouchMove}
 		>
 			<div
 				// style={{ y: `-${active * 100}%` }}

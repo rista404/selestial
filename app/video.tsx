@@ -8,7 +8,7 @@ export function Video() {
 			<div className="w-full h-full bg-[black] relative group">
 				<video
 					key="full-reel"
-					className="w-full h-full object-contain"
+					className="w-full h-full object-cover rounded-2xl overflow-hidden"
 					autoPlay
 					playsInline
 					controls
@@ -26,7 +26,7 @@ export function Video() {
 		<div className="w-full h-full bg-[#eae0d1] relative group">
 			<video
 				key="intro"
-				className="w-full h-full pointer-events-none object-contain"
+				className="w-full h-full pointer-events-none object-cover rounded-2xl overflow-hidden"
 				autoPlay
 				muted
 				loop
@@ -37,7 +37,7 @@ export function Video() {
 
 			<button
 				onClick={() => setPlay(true)}
-				className="absolute inset-0 flex justify-center items-center mx-auto"
+				className="absolute inset-0 flex justify-center items-center mx-auto opacity-80"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

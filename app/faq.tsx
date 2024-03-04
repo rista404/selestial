@@ -4,101 +4,102 @@ const EMAIL = 'hi@selestial.co'
 
 const FAQ = [
 	{
-		question: 'How this works?',
+		question: 'How Selestial works?',
 		className: 'bg-dust',
 		answer: (
 			<p>
-				1. Once you subscribe we’ll add you to the private Slack
-				channel, where you can immediately start sending your design
-				requests.
+				1. Upon subscribing, gain access to our dedicated Slack channel
+				for immediate design requests.
 				<br />
 				<br />
-				2. You can send as much design requests as you like.
+				2. Submit unlimited design requests at your convenience.
 				<br />
 				<br />
-				3. We’ll start working on requests, 1 by 1. You can pause your
-				subscription anytime you want, and come back once you need
-				design help again.
+				3. We'll address your requests sequentially{' '}
+				<strong>(one-by-one)</strong>, ensuring focused attention and
+				quality results.
+				<br />
+				<br />
+				Pause your subscription anytime, with the flexibility to resume
+				when needed."
 			</p>
 		),
 	},
 	{
-		question: 'What services do you provide?',
+		question: 'What services do you offer?',
 		className: 'bg-white',
 		answer: (
 			<p>
-				We are experts in branding, graphic design, and web design. We{' '}
-				<strong>don’t</strong> provide 3D services, animation, or
-				development* work.
-				<br />
-				<br />
-				With a note that landing pages, we can code/develop.
+				We specialize in <u>branding</u>, <u>graphic design</u>, and{' '}
+				<u>web design</u>. Please note, we do not offer 3D services,
+				complex animation, or extensive development work. However, we
+				can support you in creating short landing pages.
 			</p>
 		),
 	},
 	{
-		question: 'What’s the timeline per request?',
+		question: 'How fast are requests completed?',
 		className: 'bg-creme',
 		answer: (
 			<p>
-				Depends on the type of request and its complexity. For most
-				design requests we deliver within 48 hrs. For a full startup
-				kit, which includes a logo, colors, a few brand assets, a deck,
-				and a landing page, we’ll need more time to deliver the first
-				iterations.
+				Turnaround time varies by request complexity. Most designs are
+				delivered within 48 hours. For comprehensive projects like a
+				full startup kit, initial iterations may take longer.
 			</p>
 		),
 	},
 	{
-		question: 'Who’s behind this?',
+		question: 'Who’s behind Selestial?',
 		className: 'bg-yellow',
 		answer: (
 			<p>
-				Joint efforts of three experts who have experience in helping
-				(big-time) startups position and raise funds. A website, a
-				brand, and a graphic designer.
+				Selestial thrives on the combined expertise of three
+				professionals known for their success in assisting startups with
+				positioning and fundraising. Our team comprises experts in
+				branding, website design, and graphic design.
 				<br />
 				<br />
-				Our CEO of web and everything is Alexandra. You’ll be chatting
-				with her.
+				Leading our web design and overall operations is Alexandra, who
+				will be your primary contact.
 			</p>
 		),
 	},
 	{
-		question: 'Are there any refunds?',
+		question: 'Refunds Policy.',
 		className: 'bg-black text-white',
 		answer: (
 			<p>
-				High-quality work for a reasonable price leaves us no room for
-				any refunds.
+				Given our commitment to delivering high-quality work at a fair
+				price, refunds are not available.
 			</p>
 		),
 	},
 	{
-		question: 'Contact!',
+		question: 'Contact.',
 		className: 'bg-dust',
 		answer: (
 			<div>
-				<p>If you wish to ask us any questions, write us at:</p>
-				<button
-					className="pt-6 text-red flex w-full items-center justify-between font-bold fs-p"
-					onClick={() => {
-						navigator.clipboard.writeText(EMAIL)
-					}}
-				>
-					<span>{EMAIL}</span>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						height="1.2em"
-						fill="none"
-						viewBox="0 0 19 22"
+				<p>Have questions, or want to say hi? Write us an email.</p>
+				<div className="pt-6 text-red flex w-full items-center justify-between font-bold fs-p">
+					<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+					<button
+						onClick={() => {
+							navigator.clipboard.writeText(EMAIL)
+						}}
 					>
-						<path
-							fill="currentColor"
-							d="M17 18H6c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 4 16V2c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 6 0h7l6 6v10c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 17 18ZM12 7V2H6v14h11V7h-5ZM2 22c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 0 20V6h2v14h11v2H2Z"
-						/>
-					</svg>
-				</button>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							height="1.2em"
+							fill="none"
+							viewBox="0 0 19 22"
+						>
+							<path
+								fill="currentColor"
+								d="M17 18H6c-.55 0-1.02-.196-1.412-.587A1.926 1.926 0 0 1 4 16V2c0-.55.196-1.02.588-1.413A1.926 1.926 0 0 1 6 0h7l6 6v10c0 .55-.196 1.02-.587 1.413A1.926 1.926 0 0 1 17 18ZM12 7V2H6v14h11V7h-5ZM2 22c-.55 0-1.02-.196-1.413-.587A1.926 1.926 0 0 1 0 20V6h2v14h11v2H2Z"
+							/>
+						</svg>
+					</button>
+				</div>
 			</div>
 		),
 	},
