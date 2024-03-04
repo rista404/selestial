@@ -12,6 +12,7 @@ export function Video() {
 					autoPlay
 					playsInline
 					controls
+					onEnded={() => setPlay(false)}
 				>
 					<source
 						src="/selestial-full-reel-v1.mp4"
