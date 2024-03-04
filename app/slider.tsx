@@ -37,7 +37,7 @@ export function Slider({
 
 	return (
 		<div
-			className="group w-full h-full overflow-hidden relative max-2xl:touch-none"
+			className="group w-full h-full overflow-hidden relative"
 			onMouseEnter={() => setMouseIn(true)}
 			onMouseLeave={() => setMouseIn(false)}
 		>
