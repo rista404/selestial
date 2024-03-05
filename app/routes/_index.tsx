@@ -7,6 +7,7 @@ import { LogosBlock } from '~/logos'
 import { RecognitionsBlock } from '~/recognitions'
 import CustomCursor from 'custom-cursor.js'
 import { Video } from '~/video'
+import { Slogan } from '~/slogan'
 
 const FEATURES = [
 	'Unlimited iterations',
@@ -120,15 +121,9 @@ export default function Index() {
 				{/* Vrlo jednostavno */}
 				<section
 					id="slogan"
-					className="flex-1 flex-shrink-0 flex items-center justify-center bg-[#DFD1B4] text-center p-5"
+					className="flex-1 flex-shrink-0 flex items-center justify-center bg-[#DFD1B4] text-center p-5 group"
 				>
-					<p className="leading-none max-2xl:!fs-heading">
-						<strong className="text-white font-bold">
-							Shockingly
-						</strong>
-						<br />
-						<span className="text-black">Straightforward</span>
-					</p>
+					<Slogan />
 				</section>
 
 				{/* Milijarde */}
