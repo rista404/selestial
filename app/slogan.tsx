@@ -10,10 +10,10 @@ export function Slogan() {
 				</strong>
 			</div>
 			<div className="line-clamp-1 relative">
-				<span className="transition duration-300 group-hover:translate-y-[-100%] text-black line-clamp-1">
+				<span className="transition duration-[400ms] group-hover:translate-y-[-100%] text-black line-clamp-1">
 					Straightforward
 				</span>
-				<span className="transition duration-300 group-hover:translate-y-[-100%] text-black line-clamp-1 absolute top-[100%] left-0 right-0">
+				<span className="transition duration-[400ms] group-hover:translate-y-[-100%] text-black line-clamp-1 absolute top-[100%] left-0 right-0">
 					Straightforward
 				</span>
 			</div>
