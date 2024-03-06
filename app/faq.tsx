@@ -21,7 +21,7 @@ const FAQ = [
 				<br />
 				<br />
 				Pause your subscription anytime, with the flexibility to resume
-				when needed."
+				when needed.
 			</p>
 		),
 	},

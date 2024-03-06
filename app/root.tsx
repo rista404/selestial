@@ -27,7 +27,7 @@ export default function App() {
 				/>
 				<meta property="og:url" content="https://selestial.co/" />
 				<meta property="og:site_name" content="selestial.co" />
-				<meta property="og:title" content="TITLE OF YOUR WEBSITE" />
+				<meta property="og:title" content="selestial" />
 				<meta
 					property="og:image"
 					content="https://selestial.co/thumbnail.png"
